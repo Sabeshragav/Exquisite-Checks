@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Learning</title>
+        <link rel="stylesheet" href="rogue.css">
+        <link rel="icon" href="img8.jpeg">
+    </head>
+    <body class="bod2">
+        <ul class="navbar">
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="start.html">START</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+<head>
+    <title>Table of Contents</title>
+      
+</head>
+<body a link="white" vlink="white">
+    <div class="div1">
+    <div id="table-of-contents" class="sheet1">
+    <ol>        
+        <li><a href="#section1">INTRODUCTION</a></li>
+        <li><a href="#section2">VARIABLES IN C#</a></li>
+        <li><a href="#section3">C# DATATYPES</a></li>
+        <li><a href="#section4">CONDITIONAL STATEMENTS</a></li>
+        <li><a href="#section5">LOOPING CONCEPT</a></li>
+        <li><a href="#section6">ARRAYS AND STRINGS</a></li>
+        <li><a href="#section7">CONTROL STATEMENT</a></li>
+        <li><a href="#section8">C# FUNCTIONS</a></li>
+        <li><a href="#section9">GARBAGE COLLECTION</a></li>
+        <li><a href="#section10">PROGRAMMING STYLES</a></li>
+        <li><a href="#section11">FILE IO</a></li>
+        <li><a href="#section12">EXCEPTION HANDLING IN C#</a></li>
+		<!-- add your list of topics with corresponding file name -->
+    </ol>
+    </div>
+    </div>
+    <div id="content" class="sheet2" >
+        <div id="section1">
+            <h2>1.INTRODUCTION</h2>
+            <p>C# (pronounced "C sharp") is a versatile, object-oriented programming language developed by Microsoft. It is designed to be simple, modern, and general-purpose, making it well-suited for a wide range of software development tasks. C# is widely used in the development of Windows applications, games, web applications, and enterprise-level software.
+
+                Here are some key features and concepts of C#:
+                
+                1. Object-Oriented: C# is an object-oriented programming (OOP) language. It emphasizes the use of classes and objects to organize and manipulate data. This allows for code reuse, modularity, and easier maintenance.
+                
+                2. Platform Independence: While C# was originally designed for Windows development, it has been standardized through ECMA and can be used on various platforms. This is achieved through technologies like .NET Core and Mono.
+                
+                3. Managed Code: C# programs are compiled into an intermediate language (IL) called Common Intermediate Language (CIL). At runtime, the Common Language Runtime (CLR) of the .NET framework translates this IL into native machine code. This allows for memory management and garbage collection.
+                
+                4. Syntax Similar to C and C++: C# shares similarities in syntax with languages like C and C++, making it easier for developers familiar with those languages to transition to C#.
+                
+                5. Rich Standard Library: C# comes with a comprehensive standard library known as the .NET Framework (or .NET Core, depending on the platform). This library provides pre-built classes and functions for common tasks, such as working with databases, handling input/output, and more.
+                
+                6. Strong Typing: C# is a statically typed language, which means that variable types are determined at compile time. This helps catch type-related errors early in the development process.
+                
+                7. Memory Management: C# uses automatic garbage collection, which means that developers do not have to manually allocate and deallocate memory. This reduces the likelihood of memory-related bugs.
+                
+                8. Multithreading Support: C# provides built-in support for multithreading, allowing programs to perform multiple tasks concurrently. This is crucial for creating responsive and high-performance applications.
+                
+                9. Exception Handling: C# has a robust system for handling exceptions, making it easier to detect and recover from errors.
+                
+                10. LINQ (Language Integrated Query): LINQ allows for querying data from various sources (e.g., arrays, databases) in a unified and intuitive manner. It integrates query capabilities directly into the C# language syntax.
+                
+                11. Windows Integration: C# is tightly integrated with the Windows ecosystem, making it a powerful choice for developing Windows applications, including desktop applications and services.
+                
+                12. Cross-Platform Development: With the introduction of .NET Core, C# has become a cross-platform language, allowing developers to create applications for Windows, macOS, and Linux.
+                
+                C# is widely used in industries ranging from software development to game development (via Unity game engine) to enterprise-level applications. It is a versatile language known for its reliability, performance, and scalability, making it a popular choice for a wide variety of projects.</p>
+        </div>
+        <div id="section2">
+            <h2>2.VARIABLES IN C#</h2>
+            <p>In C#, variables are used to store data that can be manipulated or referenced within a program. They have a specific data type, which determines the type of data they can hold. Here are some important points about variables in C#:
+
+                1. Declaring Variables:
+                
+                   Variables in C# must be declared before they are used. The declaration specifies the type of data the variable will hold.
+                
+                   ```csharp
+                   int age;             // Declaration of an integer variable named 'age'
+                   double height;       // Declaration of a double-precision floating-point variable named 'height'
+                   string name;         // Declaration of a string variable named 'name'
+                   ```
+                
+                2. Initializing Variables:
+                
+                   Variables can be initialized (given an initial value) at the time of declaration or at a later point in the program.
+                
+                   ```csharp
+                   int count = 10;      // Declaration and initialization of an integer variable named 'count'
+                   double weight;       // Declaration
+                   weight = 150.5;      // Initialization
+                   ```
+                
+                3. Data Types:
+                
+                   C# supports various data types, including integers (`int`, `long`, `short`), floating-point numbers (`float`, `double`), characters (`char`), strings (`string`), and more. Each data type has specific properties and limitations.
+                
+                4. Type Inference (var):
+                
+                   In C#, you can use the `var` keyword to implicitly declare a variable. The type of the variable is inferred from the value it is assigned.
+                
+                   ```csharp
+                   var age = 25;        // 'age' is implicitly declared as an integer
+                   var name = "John";   // 'name' is implicitly declared as a string
+                   ```
+                
+                5. Constants:
+                
+                   Constants are variables whose values cannot be changed after they are initialized. They are declared using the `const` keyword.
+                
+                   ```csharp
+                   const double PI = 3.14;
+                   ```
+                
+                6. Scope of Variables:
+                
+                   The scope of a variable defines where it is accessible in the program. Variables can have local scope (accessible within a specific block of code) or global scope (accessible throughout the program).
+                
+                   ```csharp
+                   void SomeFunction() {
+                       int localVar = 10;  // 'localVar' has local scope and is accessible only within this function
+                   }
+                
+                   int globalVar = 20;    // 'globalVar' has global scope and is accessible throughout the program
+                   ```
+                
+                7. Naming Conventions:
+                
+                   Variable names should be meaningful, follow camelCase convention, and avoid using reserved keywords. They cannot start with a number and cannot contain spaces or special characters.
+                
+                   ```csharp
+                   int numberOfStudents;   // Good naming convention
+                   double average_score;   // Avoid using underscores (use camelCase)
+                   ```
+                
+                8. Lifetime of Variables:
+                
+                   The lifetime of a variable depends on its scope. Local variables are created when a function is called and destroyed when the function completes. Global variables exist for the entire duration of the program.
+                
+                9. Nullable Types:
+                
+                   C# allows you to define variables that can hold null values. This is useful when dealing with scenarios where a variable may not have a valid value.
+                
+                   ```csharp
+                   int? nullableValue = null;  // 'nullableValue' can hold either an integer or null
+                   ```
+                
+                Variables are fundamental to programming in C# and play a crucial role in storing and manipulating data within a program. Choosing appropriate variable names and understanding data types are important aspects of writing clean and readable code.</p>
+                
+        </div>
+        <div id="section3">
+            <h2>3.C# DATATYPES</h2>
+            <p>In C#, data types define the type and characteristics of data that a variable can hold. They determine the range of values that a variable can take, as well as the operations that can be performed on it. Here are the primary data types in C#:
+
+                1. Numeric Data Types:
+                
+                   - Integral Types:
+                     - `sbyte`: Signed 8-bit integer (-128 to 127)
+                     - `byte`: Unsigned 8-bit integer (0 to 255)
+                     - `short`: Signed 16-bit integer (-32,768 to 32,767)
+                     - `ushort`: Unsigned 16-bit integer (0 to 65,535)
+                     - `int`: Signed 32-bit integer (-2,147,483,648 to 2,147,483,647)
+                     - `uint`: Unsigned 32-bit integer (0 to 4,294,967,295)
+                     - `long`: Signed 64-bit integer (-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807)
+                     - `ulong`: Unsigned 64-bit integer (0 to 18,446,744,073,709,551,615)
+                
+                   - Floating-Point Types:
+                     - `float`: Single-precision floating-point (approximately ±1.5 x 10^-45 to ±3.4 x 10^38)
+                     - `double`: Double-precision floating-point (approximately ±5.0 x 10^-324 to ±1.7 x 10^308)
+                     - `decimal`: Decimal floating-point (approximately ±1.0 x 10^-28 to ±7.9 x 10^28)
+                
+                2.Character Data Type:
+                
+                   - `char`: Represents a single 16-bit Unicode character.
+                
+                3.Boolean Data Type:
+                
+                   - `bool`: Represents a Boolean value (true or false).
+                
+                4. String Data Type:
+                
+                   - `string`: Represents a sequence of characters.
+                
+                5. DateTime Data Type:
+                
+                   - `DateTime`: Represents dates and times.
+                
+                6. Other Data Types:
+                
+                   - `object`: Represents a base type from which all types in C# are derived.
+                   - `dynamic`: Represents a type whose operations are resolved at runtime.
+                
+                7. Nullable Types:
+                
+                   These allow variables to have a value of `null` in addition to their normal value range. For example, `int?` can represent any valid `int` value or `null`.
+                
+                   ```csharp
+                   int? nullableInt = null;
+                   ```
+                
+                8. Enumerations (Enums):
+                
+                   Enums are a user-defined data type that allows you to define a set of named constants.
+                
+                   ```csharp
+                   enum Days { Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday };
+                   Days myDay = Days.Monday;
+                   ```
+                
+                9. Structures (structs):
+                
+                   Structs are similar to classes but are value types rather than reference types.
+                
+                   ```csharp
+                   struct Point {
+                       public int x;
+                       public int y;
+                   }
+                   ```
+                
+                10. Arrays:
+                
+                    Arrays are used to store collections of elements of the same type.
+                
+                    ```csharp
+                    int[] numbers = { 1, 2, 3, 4, 5 };
+                    ```
+                
+                11. Reference Types:
+                
+                    - Classes
+                    - Interfaces
+                    - Delegates
+                    - Arrays (which are reference types when used as objects)
+                
+                Remember that C# is a statically typed language, meaning that variables must have their types declared at compile time. This ensures type safety and helps catch potential errors early in the development process.
+                
+                Understanding data types is essential for writing efficient and correct C# code. It determines how memory is allocated, what operations can be performed, and how values are stored and manipulated in a program.</p>
+        </div>
+        <div id="section4">
+           <h2>4.CONDITIONAL STATEMENTS</h2>
+            <p>Conditional statements in C# allow you to control the flow of your program based on certain conditions. They enable your program to make decisions and execute different code blocks depending on whether a condition is true or false. There are several types of conditional statements in C#:
+
+                1. if Statement:
+                
+                   The `if` statement is used to execute a block of code if a specified condition is true. If the condition is false, the code block will be skipped.
+                
+                   Syntax:
+                   ```csharp
+                   if (condition)
+                   {
+                       // Code to execute if the condition is true
+                   }
+                   ```
+                
+                   Example:
+                   ```csharp
+                   int age = 20;
+                
+                   if (age >= 18)
+                   {
+                       Console.WriteLine("You are eligible to vote.");
+                   }
+                   ```
+                
+                2. if-else Statement:
+                
+                   The `if-else` statement allows you to execute one block of code if a condition is true and a different block if the condition is false.
+                
+                   Syntax:
+                   ```csharp
+                   if (condition)
+                   {
+                       // Code to execute if the condition is true
+                   }
+                   else
+                   {
+                       // Code to execute if the condition is false
+                   }
+                   ```
+                
+                   Example:
+                   ```csharp
+                   int hour = 15;
+                
+                   if (hour < 12)
+                   {
+                       Console.WriteLine("Good morning!");
+                   }
+                   else
+                   {
+                       Console.WriteLine("Good afternoon!");
+                   }
+                   ```
+                
+                3. if-else-if Statement:
+                
+                   The `if-else-if` statement allows you to check multiple conditions and execute different code blocks based on the first condition that is true.
+                
+                   Syntax:
+                   ```csharp
+                   if (condition1)
+                   {
+                       // Code to execute if condition1 is true
+                   }
+                   else if (condition2)
+                   {
+                       // Code to execute if condition2 is true
+                   }
+                   else
+                   {
+                       // Code to execute if all conditions are false
+                   }
+                   ```
+                
+                   Example:
+                   ```csharp
+                   int grade = 75;
+                
+                   if (grade >= 90)
+                   {
+                       Console.WriteLine("A");
+                   }
+                   else if (grade >= 80)
+                   {
+                       Console.WriteLine("B");
+                   }
+                   else if (grade >= 70)
+                   {
+                       Console.WriteLine("C");
+                   }
+                   else
+                   {
+                       Console.WriteLine("F");
+                   }
+                   ```
+                
+                4. switch Statement:
+                
+                   The `switch` statement is used to select one of many code blocks to be executed. It's useful when you have multiple cases to consider.
+                
+                   Syntax:
+                   ```csharp
+                   switch (expression)
+                   {
+                       case value1:
+                           // Code to execute if expression matches value1
+                           break;
+                       case value2:
+                           // Code to execute if expression matches value2
+                           break;
+                       default:
+                           // Code to execute if expression doesn't match any case
+                           break;
+                   }
+                   ```
+                
+                   Example:
+                   ```csharp
+                   string day = "Monday";
+                
+                   switch (day)
+                   {
+                       case "Monday":
+                           Console.WriteLine("It's Monday!");
+                           break;
+                       case "Tuesday":
+                           Console.WriteLine("It's Tuesday!");
+                           break;
+                       default:
+                           Console.WriteLine("It's not Monday or Tuesday.");
+                           break;
+                   }
+                   ```
+                
+                These conditional statements are essential for creating programs that can make decisions based on different conditions, allowing for more dynamic and responsive code in C#.</p>  
+        </div> 
+         <div id="section5">
+            <h2>5.LOOPING CONCEPT</h2>
+            <p>Looping in C# allows you to execute a block of code repeatedly as long as a specified condition is true. This is particularly useful for tasks that involve repetitive operations or for iterating over collections of data. There are several types of loops in C#:
+
+                1. **for Loop**:
+                
+                   The `for` loop is used when you know in advance how many times you want to repeat a block of code.
+                
+                   Syntax:
+                   ```csharp
+                   for (initialization; condition; increment/decrement)
+                   {
+                       // Code to be executed
+                   }
+                   ```
+                
+                   Example:
+                   ```csharp
+                   for (int i = 0; i < 5; i++)
+                   {
+                       Console.WriteLine("Iteration " + i);
+                   }
+                   ```
+                
+                2. **while Loop**:
+                
+                   The `while` loop continues to execute a block of code as long as the specified condition is true.
+                
+                   Syntax:
+                   ```csharp
+                   while (condition)
+                   {
+                       // Code to be executed
+                   }
+                   ```
+                
+                   Example:
+                   ```csharp
+                   int i = 0;
+                
+                   while (i < 5)
+                   {
+                       Console.WriteLine("Iteration " + i);
+                       i++;
+                   }
+                   ```
+                
+                3. **do...while Loop**:
+                
+                   The `do...while` loop is similar to the `while` loop, but it ensures that the code block is executed at least once, even if the condition is initially false.
+                
+                   Syntax:
+                   ```csharp
+                   do
+                   {
+                       // Code to be executed
+                   } while (condition);
+                   ```
+                
+                   Example:
+                   ```csharp
+                   int i = 0;
+                
+                   do
+                   {
+                       Console.WriteLine("Iteration " + i);
+                       i++;
+                   } while (i < 5);
+                   ```
+                
+                4. **foreach Loop**:
+                
+                   The `foreach` loop is used to iterate over elements in a collection (e.g., arrays, lists, etc.).
+                
+                   Syntax:
+                   ```csharp
+                   foreach (type variable in collection)
+                   {
+                       // Code to be executed
+                   }
+                   ```
+                
+                   Example:
+                   ```csharp
+                   int[] numbers = { 1, 2, 3, 4, 5 };
+                
+                   foreach (int number in numbers)
+                   {
+                       Console.WriteLine(number);
+                   }
+                   ```
+                
+                5. **Nested Loops**:
+                
+                   You can have loops inside other loops. This is called nested looping and is useful for more complex tasks that involve multiple iterations.
+                
+                   Example:
+                   ```csharp
+                   for (int i = 0; i < 3; i++)
+                   {
+                       for (int j = 0; j < 3; j++)
+                       {
+                           Console.WriteLine(i + ", " + j);
+                       }
+                   }
+                   ```
+                
+                6. **break and continue Statements**:
+                
+                   - The `break` statement is used to exit a loop prematurely.
+                   - The `continue` statement is used to skip the rest of the loop and move to the next iteration.
+                
+                   Example:
+                   ```csharp
+                   for (int i = 0; i < 5; i++)
+                   {
+                       if (i == 3)
+                           break; // Exit the loop when i is 3
+                
+                       Console.WriteLine("Iteration " + i);
+                   }
+                   ```
+                
+                These looping constructs are essential for creating dynamic, iterative behavior in C# programs. They provide the ability to perform repetitive tasks efficiently and are a fundamental concept in programming.</p>    
+        </div>
+        <div id="section6">
+            <h2>6.ARRAYS AND STRINGS</h2>
+            <p>Arrays and strings are fundamental data structures in C# that allow you to store and manipulate collections of data. Here's an overview of arrays and strings in C#:
+
+                ### Arrays:
+                
+                An array is a fixed-size collection of elements of the same type. It allows you to store and manipulate multiple values under a single variable name.
+                
+                #### Declaring and Initializing Arrays:
+                
+                ```csharp
+                // Declaring an array of integers with 5 elements
+                int[] numbers;
+                
+                // Initializing the array with specific values
+                numbers = new int[] { 1, 2, 3, 4, 5 };
+                ```
+                
+                #### Accessing Elements of an Array:
+                
+                ```csharp
+                int firstElement = numbers[0]; // Accessing the first element (index 0)
+                int thirdElement = numbers[2]; // Accessing the third element (index 2)
+                ```
+                
+                #### Arrays and Loops:
+                
+                Arrays are often used in conjunction with loops for operations that involve multiple elements.
+                
+                ```csharp
+                for (int i = 0; i < numbers.Length; i++)
+                {
+                    Console.WriteLine("Element at index " + i + ": " + numbers[i]);
+                }
+                ```
+                
+                ### Strings:
+                
+                A string is a sequence of characters. In C#, strings are represented using the `string` data type.
+                
+                #### Declaring and Initializing Strings:
+                
+                ```csharp
+                string firstName = "John"; // Initializing a string with a value
+                string lastName;           // Declaring a string variable
+                lastName = "Doe";          // Assigning a value to the variable
+                ```
+                
+                #### String Operations:
+                
+                Strings support various operations like concatenation, length retrieval, and indexing.
+                
+                ```csharp
+                string fullName = firstName + " " + lastName; // Concatenation
+                int length = fullName.Length;                 // Getting the length
+                char firstChar = fullName[0];                 // Accessing characters by index
+                ```
+                
+                #### String Methods:
+                
+                Strings have a rich set of built-in methods for tasks like manipulation, searching, and formatting.
+                
+                ```csharp
+                string allCaps = fullName.ToUpper();      // Convert to uppercase
+                string subString = fullName.Substring(5); // Get a substring starting from index 5
+                int indexOfSpace = fullName.IndexOf(' ');  // Find the index of the first space character
+                ```
+                
+                #### String Interpolation:
+                
+                String interpolation allows you to embed expressions within a string.
+                
+                ```csharp
+                string message = $"Hello, {fullName}!"; // Interpolated string
+                ```
+                
+                #### String Comparison:
+                
+                When comparing strings, it's important to use methods like `Equals` or `String.Compare` instead of `==` due to potential issues with string interning.
+                
+                ```csharp
+                string str1 = "hello";
+                string str2 = "Hello";
+                
+                bool areEqual = str1.Equals(str2, StringComparison.OrdinalIgnoreCase);
+                ```
+                
+                #### String and Char Arrays:
+                
+                You can convert strings to character arrays and vice versa.
+                
+                ```csharp
+                char[] charArray = fullName.ToCharArray(); // Convert string to char array
+                string fromCharArray = new string(charArray); // Convert char array to string
+                ```
+                
+                Arrays and strings are crucial data structures in C# that are extensively used in various programming tasks. Understanding how to work with them effectively is essential for writing efficient and readable code.</p>
+        </div>                             
+        <div id="section7">
+            <h2>7.CONTROL STATEMENTS</h2>
+            <p>Control statements in C# are structures that allow you to control the flow of execution in your program. They help you make decisions and repeat actions based on conditions. Here are the key control statements in C#:
+
+                ### Conditional Statements:
+                
+                1. **if Statement**:
+                
+                   The `if` statement is used to execute a block of code if a specified condition is true.
+                
+                   ```csharp
+                   if (condition)
+                   {
+                       // Code to execute if the condition is true
+                   }
+                   ```
+                
+                   Example:
+                   ```csharp
+                   int age = 20;
+                
+                   if (age >= 18)
+                   {
+                       Console.WriteLine("You are eligible to vote.");
+                   }
+                   ```
+                
+                2. **if-else Statement**:
+                
+                   The `if-else` statement allows you to execute one block of code if a condition is true and a different block if the condition is false.
+                
+                   ```csharp
+                   if (condition)
+                   {
+                       // Code to execute if the condition is true
+                   }
+                   else
+                   {
+                       // Code to execute if the condition is false
+                   }
+                   ```
+                
+                   Example:
+                   ```csharp
+                   int hour = 15;
+                
+                   if (hour < 12)
+                   {
+                       Console.WriteLine("Good morning!");
+                   }
+                   else
+                   {
+                       Console.WriteLine("Good afternoon!");
+                   }
+                   ```
+                
+                3. **else-if Statement**:
+                
+                   The `else-if` statement allows you to check multiple conditions and execute different code blocks based on the first condition that is true.
+                
+                   ```csharp
+                   if (condition1)
+                   {
+                       // Code to execute if condition1 is true
+                   }
+                   else if (condition2)
+                   {
+                       // Code to execute if condition2 is true
+                   }
+                   else
+                   {
+                       // Code to execute if all conditions are false
+                   }
+                   ```
+                
+                   Example:
+                   ```csharp
+                   int grade = 75;
+                
+                   if (grade >= 90)
+                   {
+                       Console.WriteLine("A");
+                   }
+                   else if (grade >= 80)
+                   {
+                       Console.WriteLine("B");
+                   }
+                   else if (grade >= 70)
+                   {
+                       Console.WriteLine("C");
+                   }
+                   else
+                   {
+                       Console.WriteLine("F");
+                   }
+                   ```
+                
+                ### Looping Statements:
+                
+                1. **for Loop**:
+                
+                   The `for` loop is used when you know in advance how many times you want to repeat a block of code.
+                
+                   ```csharp
+                   for (initialization; condition; increment/decrement)
+                   {
+                       // Code to be executed
+                   }
+                   ```
+                
+                   Example:
+                   ```csharp
+                   for (int i = 0; i < 5; i++)
+                   {
+                       Console.WriteLine("Iteration " + i);
+                   }
+                   ```
+                
+                2. **while Loop**:
+                
+                   The `while` loop continues to execute a block of code as long as the specified condition is true.
+                
+                   ```csharp
+                   while (condition)
+                   {
+                       // Code to be executed
+                   }
+                   ```
+                
+                   Example:
+                   ```csharp
+                   int i = 0;
+                
+                   while (i < 5)
+                   {
+                       Console.WriteLine("Iteration " + i);
+                       i++;
+                   }
+                   ```
+                
+                3. **do-while Loop**:
+                
+                   The `do-while` loop ensures that the code block is executed at least once, even if the condition is initially false.
+                
+                   ```csharp
+                   do
+                   {
+                       // Code to be executed
+                   } while (condition);
+                   ```
+                
+                   Example:
+                   ```csharp
+                   int i = 0;
+                
+                   do
+                   {
+                       Console.WriteLine("Iteration " + i);
+                       i++;
+                   } while (i < 5);
+                   ```
+                
+                4. **foreach Loop**:
+                
+                   The `foreach` loop is used to iterate over elements in a collection (e.g., arrays, lists, etc.).
+                
+                   ```csharp
+                   foreach (type variable in collection)
+                   {
+                       // Code to be executed
+                   }
+                   ```
+                
+                   Example:
+                   ```csharp
+                   int[] numbers = { 1, 2, 3, 4, 5 };
+                
+                   foreach (int number in numbers)
+                   {
+                       Console.WriteLine(number);
+                   }
+                   ```
+                
+                These control statements are essential for creating dynamic, interactive, and responsive applications in C#. They allow you to make decisions and perform repetitive tasks efficiently.</p>
+        </div>
+        <div id="section8">
+            <h2>8.C# FUNCTIONS</h2>
+            <p>Functions in C# are blocks of reusable code that perform a specific task or set of tasks. They help in organizing code, making it modular and easier to maintain. Here is an overview of functions in C#:
+
+                ### Function Declaration:
+                
+                In C#, you can declare a function using the `function` keyword followed by the function's return type (or `void` if the function doesn't return anything), the function name, and a pair of parentheses containing any parameters.
+                
+                ```csharp
+                returnType functionName(parameters)
+                {
+                    // Code to be executed
+                }
+                ```
+                
+                ### Example of a Simple Function:
+                
+                ```csharp
+                int AddNumbers(int num1, int num2)
+                {
+                    int sum = num1 + num2;
+                    return sum;
+                }
+                ```
+                
+                ### Calling a Function:
+                
+                To use a function, you need to call it by its name and pass the required arguments.
+                
+                ```csharp
+                int result = AddNumbers(5, 3); // result will be 8
+                ```
+                
+                ### Parameters and Arguments:
+                
+                Functions can accept parameters, which are variables that act as placeholders for values to be passed into the function when it is called.
+                
+                ```csharp
+                int Multiply(int num1, int num2)
+                {
+                    return num1 * num2;
+                }
+                
+                int product = Multiply(4, 6); // product will be 24
+                ```
+                
+                ### Return Statement:
+                
+                A function can optionally return a value using the `return` statement. This allows the function to produce an output that can be used elsewhere in the program.
+                
+                ```csharp
+                int Multiply(int num1, int num2)
+                {
+                    return num1 * num2;
+                }
+                
+                int product = Multiply(4, 6); // product will be 24
+                ```
+                
+                ### Void Functions:
+                
+                If a function does not return any value, its return type should be specified as `void`.
+                
+                ```csharp
+                void GreetUser(string name)
+                {
+                    Console.WriteLine("Hello, " + name + "!");
+                }
+                
+                GreetUser("John"); // Output: "Hello, John!"
+                ```
+                
+                ### Function Overloading:
+                
+                C# allows you to define multiple functions with the same name but different parameter lists. This is called function overloading.
+                
+                ```csharp
+                int Add(int num1, int num2)
+                {
+                    return num1 + num2;
+                }
+                
+                double Add(double num1, double num2)
+                {
+                    return num1 + num2;
+                }
+                ```
+                
+                ### Optional Parameters (C# 4.0 and later):
+                
+                You can specify default values for function parameters, making them optional when calling the function.
+                
+                ```csharp
+                void DisplayInfo(string name, int age = 30)
+                {
+                    Console.WriteLine("Name: " + name + ", Age: " + age);
+                }
+                
+                DisplayInfo("John"); // Output: "Name: John, Age: 30"
+                ```
+                
+                ### Recursive Functions:
+                
+                A recursive function is a function that calls itself. This technique is useful for solving problems that can be broken down into smaller, similar subproblems.
+                
+                ```csharp
+                int Factorial(int n)
+                {
+                    if (n == 0)
+                        return 1;
+                    else
+                        return n * Factorial(n - 1);
+                }
+                ```
+                
+                ### Lambda Expressions (C# 3.0 and later):
+                
+                Lambda expressions are a concise way to define anonymous methods. They are particularly useful in LINQ queries and when working with delegates.
+                
+                ```csharp
+                Func<int, int> square = x => x * x;
+                ```
+                
+                Functions are a fundamental building block in C# programming. They promote code reusability, modularization, and are crucial for creating complex applications.</p>
+        </div>
+        <div id="section9">
+            <h2>9.GARBAGE COLLECTION</h2>
+            <p>Garbage collection in C# is an automatic memory management process that handles the allocation and deallocation of memory for objects. It is a fundamental feature of the .NET Common Language Runtime (CLR) that helps manage memory efficiently and prevents memory leaks.
+
+                Here are some key points about garbage collection in C#:
+                
+                1. **Automatic Memory Management**:
+                
+                   Garbage collection relieves developers from manually allocating and deallocating memory for objects. This helps prevent common memory-related bugs like memory leaks and dangling references.
+                
+                2. **Mark and Sweep Algorithm**:
+                
+                   The garbage collector uses a "mark and sweep" algorithm to determine which objects are in use and which can be safely reclaimed. It starts by marking all objects in use, then sweeps through the memory to reclaim memory from objects that are no longer reachable.
+                
+                3. **Generational Garbage Collection**:
+                
+                   The CLR uses a generational garbage collection approach. Objects are categorized into different generations based on their age. The most frequently created objects are placed in the youngest generation (Generation 0). If they survive garbage collections, they are promoted to older generations.
+                
+                4. **Generation 0, 1, and 2**:
+                
+                   - **Generation 0**: Contains short-lived objects. Most newly created objects are placed here. Garbage collections in Generation 0 are frequent but relatively fast.
+                   - **Generation 1**: Contains objects that have survived one garbage collection. Garbage collections in Generation 1 are less frequent but take longer than those in Generation 0.
+                   - **Generation 2**: Contains long-lived objects. Garbage collections in Generation 2 are infrequent and take the longest to perform.
+                
+                5. **Finalization**:
+                
+                   Some objects may have a finalizer, which is a special method called by the garbage collector before an object is reclaimed. Finalization allows objects to clean up unmanaged resources before being destroyed.
+                
+                6. **IDisposable Interface**:
+                
+                   For objects that use unmanaged resources, it's recommended to implement the `IDisposable` interface. This allows for deterministic cleanup of resources.
+                
+                7. **`GC` Class**:
+                
+                   The `GC` class in C# provides methods to interact with the garbage collector. For example, you can force a garbage collection using `GC.Collect()`.
+                
+                8. **Avoiding Object Finalization**:
+                
+                   It's generally recommended to avoid using finalizers (`~ClassName`) and instead rely on the `Dispose` pattern for resource cleanup. Finalizers add overhead to the garbage collection process.
+                
+                9. **Large Object Heap (LOH)**:
+                
+                   Large objects (those larger than 85,000 bytes) are allocated on the Large Object Heap. These objects have different garbage collection behavior.
+                
+                10. **Performance Considerations**:
+                
+                    While garbage collection simplifies memory management, it's important to be aware of its performance implications. It's generally efficient, but poorly designed code or incorrect resource management can lead to performance issues.
+                
+                11. **Tuning and Optimization**:
+                
+                    In some cases, it may be necessary to fine-tune garbage collection behavior for specific scenarios. This can be achieved through configuration settings and profiling tools.
+                
+                Garbage collection is a powerful feature of the .NET framework that enhances memory management in C# programs. It simplifies memory handling, reduces bugs related to memory management, and helps create more robust and reliable applications.</p>
+        </div>
+        <div id="section10">
+            <h2>10.PROGRAMMING STYLES</h2>
+            <p>In C#, as in any programming language, there are several programming styles and best practices that developers follow to write clean, maintainable, and efficient code. Here are some commonly used programming styles in C#:
+
+                1. **Camel Case Naming**:
+                
+                   - **Variables**: `myVariable`, `totalCount`, `firstName`
+                   - **Methods**: `calculateTotal()`, `getUserInfo()`
+                   - **Parameters**: `maxValue`, `inputString`
+                
+                   Camel case means starting with a lowercase letter and then capitalizing the first letter of each new word.
+                
+                2. **Pascal Case Naming**:
+                
+                   - **Classes**: `Person`, `Car`, `OrderManager`
+                   - **Methods (for public methods)**: `CalculateTotal()`, `GetUserInfo()`
+                   - **Properties**: `FirstName`, `TotalCount`
+                
+                   Pascal case is similar to camel case but starts with an uppercase letter.
+                
+                3. **Use Meaningful Names**:
+                
+                   Use names that clearly convey the purpose of the variable, method, class, etc. Avoid using generic names like `temp`, `data`, etc. Use descriptive names like `customerName`, `orderTotal`, etc.
+                
+                4. **Comments and Documentation**:
+                
+                   - Use comments to explain complex code, provide context, or clarify intent.
+                   - Consider using XML comments to generate documentation for your code.
+                
+                   ```csharp
+                   /// <summary>
+                   /// Calculates the total amount.
+                   /// </summary>
+                   /// <param name="items">List of items</param>
+                   /// <returns>Total amount</returns>
+                   public decimal CalculateTotal(List<Item> items)
+                   {
+                       // Code here
+                   }
+                   ```
+                
+                5. **Consistent Indentation**:
+                
+                   - Use spaces or tabs consistently for indentation.
+                   - Maintain a consistent number of spaces or tabs for each level of indentation.
+                
+                6. **Avoid Deep Nesting**:
+                
+                   - Avoid excessive levels of nested loops or conditional statements. This can make code hard to read and maintain.
+                
+                7. **Single Responsibility Principle (SRP)**:
+                
+                   - Each class or method should have a single responsibility or do one thing well. This makes code easier to understand, test, and maintain.
+                
+                8. **Don't Repeat Yourself (DRY)**:
+                
+                   - Avoid duplicating code. Instead, encapsulate reusable logic in functions, methods, or classes.
+                
+                9. **Avoid Magic Numbers**:
+                
+                   - Replace hard-coded numerical values with named constants or variables with descriptive names.
+                
+                   ```csharp
+                   const int MAX_ATTEMPTS = 3;
+                   ```
+                
+                10. **Error Handling**:
+                
+                    - Use exceptions for error handling and avoid returning error codes.
+                    - Handle exceptions gracefully and provide meaningful error messages.
+                
+                11. **Use Design Patterns**:
+                
+                    - Familiarize yourself with common design patterns like Singleton, Factory, Observer, etc. Apply them when appropriate to improve code organization and maintainability.
+                
+                12. **Avoid Global Variables**:
+                
+                    - Minimize the use of global variables. Instead, use proper scoping and pass data as parameters.
+                
+                13. **Testing and Testable Code**:
+                
+                    - Write code with testability in mind. Use unit tests to verify the correctness of your code.
+                
+                14. **Version Control**:
+                
+                    - Use version control systems like Git to track changes, collaborate with others, and manage code versions.
+                
+                15. **Keep Code Modular**:
+                
+                    - Divide your code into small, reusable modules or functions. This promotes code reusability and makes it easier to maintain.
+                
+                Remember that adhering to a consistent and readable style makes your code more accessible to others and helps future-you understand and work with your own code. It's also crucial for collaboration in team projects.</p>
+        </div>
+        <div id="section11">
+            <h2>11.FILE IO</h2>
+            <p>File I/O (Input/Output) in C# allows you to work with files, read data from them, and write data to them. It's an essential aspect of many applications, especially those that need to store or retrieve data from external sources. Here's an overview of File I/O in C#:
+
+                ### Reading from Files:
+                
+                To read data from a file in C#, you typically use the `StreamReader` class.
+                
+                ```csharp
+                using System;
+                using System.IO;
+                
+                class Program
+                {
+                    static void Main()
+                    {
+                        string filePath = "sample.txt";
+                
+                        // Check if the file exists
+                        if (File.Exists(filePath))
+                        {
+                            // Open the file for reading
+                            using (StreamReader reader = new StreamReader(filePath))
+                            {
+                                string line;
+                                while ((line = reader.ReadLine()) != null)
+                                {
+                                    Console.WriteLine(line);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("File does not exist.");
+                        }
+                    }
+                }
+                ```
+                
+                In this example, the program checks if a file named `sample.txt` exists. If it does, it opens the file for reading, reads lines one by one, and prints them to the console.
+                
+                ### Writing to Files:
+                
+                To write data to a file in C#, you can use the `StreamWriter` class.
+                
+                ```csharp
+                using System;
+                using System.IO;
+                
+                class Program
+                {
+                    static void Main()
+                    {
+                        string filePath = "output.txt";
+                
+                        // Open the file for writing
+                        using (StreamWriter writer = new StreamWriter(filePath))
+                        {
+                            writer.WriteLine("Hello, world!");
+                            writer.WriteLine("This is a test.");
+                        }
+                
+                        Console.WriteLine("Data written to file.");
+                    }
+                }
+                ```
+                
+                In this example, the program writes two lines of text to a file named `output.txt`.
+                
+                ### Appending to Files:
+                
+                If you want to append data to an existing file, you can use the `StreamWriter` with an additional parameter.
+                
+                ```csharp
+                using System;
+                using System.IO;
+                
+                class Program
+                {
+                    static void Main()
+                    {
+                        string filePath = "output.txt";
+                
+                        // Append to the file
+                        using (StreamWriter writer = new StreamWriter(filePath, true))
+                        {
+                            writer.WriteLine("This line will be appended.");
+                        }
+                
+                        Console.WriteLine("Data appended to file.");
+                    }
+                }
+                ```
+                
+                ### File Operations:
+                
+                C# provides a rich set of methods for various file operations, including:
+                
+                - Checking if a file exists: `File.Exists(filePath)`
+                - Copying a file: `File.Copy(sourceFilePath, destinationFilePath)`
+                - Moving a file: `File.Move(sourceFilePath, destinationFilePath)`
+                - Deleting a file: `File.Delete(filePath)`
+                
+                ### Exception Handling:
+                
+                When working with files, it's important to handle exceptions that may occur, such as when a file is not found or there are permission issues.
+                
+                ```csharp
+                try
+                {
+                    // File I/O code here
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("An error occurred: " + ex.Message);
+                }
+                ```
+                
+                Remember to handle exceptions gracefully to prevent crashes and provide meaningful error messages to users.
+                
+                File I/O in C# is a powerful tool for working with external data. However, always be cautious when reading from or writing to files, as errors can occur due to factors like file permissions, non-existent files, and unexpected file formats.</p>
+            </div>
+        <div id="section12">
+            <h2>12.EXCEPTION HANDLING IN C#</h2>
+            <p>Exception handling in C# allows you to gracefully deal with unexpected or exceptional situations that might occur during the execution of a program. It helps prevent crashes and allows you to provide meaningful error messages to users. Here's an overview of exception handling in C#:
+
+### Try-Catch Blocks:
+
+The primary mechanism for handling exceptions in C# is the `try-catch` block. This block allows you to surround a section of code that might throw an exception.
+
+```csharp
+try
+{
+    // Code that might throw an exception
+}
+catch (ExceptionType ex)
+{
+    // Code to handle the exception
+}
+```
+
+### Example:
+
+```csharp
+try
+{
+    int[] numbers = { 1, 2, 3 };
+    Console.WriteLine(numbers[5]); // This will throw an IndexOutOfRangeException
+}
+catch (IndexOutOfRangeException ex)
+{
+    Console.WriteLine("An error occurred: " + ex.Message);
+}
+```
+
+### Multiple Catch Blocks:
+
+You can have multiple `catch` blocks to handle different types of exceptions.
+
+```csharp
+try
+{
+    // Code that might throw an exception
+}
+catch (ExceptionType1 ex1)
+{
+    // Code to handle ExceptionType1
+}
+catch (ExceptionType2 ex2)
+{
+    // Code to handle ExceptionType2
+}
+```
+
+### Finally Block:
+
+The `finally` block is used to specify code that will be executed regardless of whether an exception is thrown or not.
+
+```csharp
+try
+{
+    // Code that might throw an exception
+}
+catch (ExceptionType ex)
+{
+    // Code to handle the exception
+}
+finally
+{
+    // Code that will be executed no matter what
+}
+```
+
+### Custom Exceptions:
+
+You can create your own custom exception classes by inheriting from the `Exception` class.
+
+```csharp
+public class CustomException : Exception
+{
+    public CustomException(string message) : base(message)
+    {
+    }
+}
+```
+
+### Throwing Exceptions:
+
+You can throw an exception using the `throw` keyword.
+
+```csharp
+try
+{
+    throw new CustomException("This is a custom exception.");
+}
+catch (CustomException ex)
+{
+    Console.WriteLine("An error occurred: " + ex.Message);
+}
+```
+
+### Inner Exceptions:
+
+Exceptions can have an inner exception, which provides additional context about the original exception.
+
+```csharp
+try
+{
+    try
+    {
+        // Some code that throws an exception
+    }
+    catch (Exception ex)
+    {
+        throw new CustomException("An error occurred.", ex);
+    }
+}
+catch (CustomException ex)
+{
+    Console.WriteLine("An error occurred: " + ex.Message);
+    if (ex.InnerException != null)
+    {
+        Console.WriteLine("Inner Exception: " + ex.InnerException.Message);
+    }
+}
+```
+
+### Exception Filters (C# 6.0 and later):
+
+You can filter exceptions using the `when` keyword.
+
+```csharp
+try
+{
+    // Some code that throws an exception
+}
+catch (Exception ex) when (ex.Message.Contains("specific condition"))
+{
+    // Code to handle the specific condition
+}
+```
+
+### Rethrowing Exceptions:
+
+You can rethrow an exception using the `throw` statement without any arguments.
+
+```csharp
+try
+{
+    // Some code that throws an exception
+}
+catch (Exception ex)
+{
+    // Code to handle the exception
+    throw; // Rethrow the same exception
+}
+```
+
+Exception handling is crucial for writing robust and reliable code. It helps prevent crashes and provides a way to gracefully handle unexpected situations. Remember to provide meaningful error messages to aid in debugging and user experience.</p>
+
+ </div>
+    </div>
+
+    <script>
+        // JavaScript to handle table of contents links
+        const tocItems = document.querySelectorAll("#table-of-contents ul li a");
+
+        tocItems.forEach((item) => {
+            item.addEventListener("click", (event) => {
+                event.preventDefault();
+                const sectionId = event.target.getAttribute("href").substring(1);
+                const section = document.getElementById(sectionId);
+
+                // Scroll to the selected section
+                section.scrollIntoView({ behavior: "smooth" });
+            });
+        });
+    </script>
+</body>
+</html>

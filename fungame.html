@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="rogue.css">
+    <link rel="icon" href="gamep.jpeg">
+    <title>Fun game</title>
+</head>
+   
+<body class="bod5">
+    
+    <ul class="navbar">
+        <li><a href="home.html">HOME</a></li>
+        <li><a href="start.html">START</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+    </ul>
+    <div class="fullcont">
+    <h1>Guess the number</h1>
+    <p id="para">---</p>
+    <input class="guess_no" id="gs" placeholder="Enter number from 0 to 9..." type="number"></input><br>
+    <button class="guess btn" onclick="guess()">Check</button>
+    <a href="fungame.html" class="fol rev">Retry</a>
+    <button class="guess btn" onclick="rules()">Rules</button>
+    <p id="score">SCORE : 10</p>
+    </div>
+   
+
+    <div class="rule">
+        <h1> RULES       
+            <ul>
+            <li>First and foremost this a guessing game, in which you have to enter a number in the input box.</li>
+            <li>The system will generate a random number everytime when the "Check" key is clicked.</li>
+            <li>Default score wil be 10.</li>
+            <li>When the input number the generated number are equal, you'll get a win and the sccore is increased by 1.</li>
+            <li>In any other case you'll lose a score.</li>
+            <li>upon reaching the score "0" ,you'll get a "Game over" </li>
+        </h1>
+
+        </ul>
+      
+        <a href="fungame.html" class="fol rev">Back</a>
+    
+    </div>
+
+
+    <script>
+    
+        scr=10
+        function guess(){
+            input_num=Number(document.getElementById("gs").value)
+            rand_num=Math.floor(10*Math.random())
+            p=document.getElementById("para")
+            score=document.getElementById("score")
+            
+            console.log(rand_num)
+    
+            if(input_num==rand_num){
+                if(scr==0){
+                    alert("GAME OVER..Your score reached zero..")
+                    return
+                }
+                scr+=1
+                score.textContent="score : "+scr
+                p.textContent="YOU WON..You have guessed right....!"
+            }
+            else{
+                if(scr==0){
+                    alert("GAME OVER..Your score reached zero..")
+                    return
+                }
+                scr-=1
+                score.textContent="score : "+scr
+                p.textContent="You guess is wrong...!"
+            }
+        
+        }
+        var fullcont=document.querySelector(".fullcont")
+        var rule=document.querySelector(".rule")
+        function rules(){
+            fullcont.style.display="none"
+            rule.style.display="inline-block"
+
+        }
+    </script>
+</body>
+</html>

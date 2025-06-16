@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Learning</title>
+        <link rel="stylesheet" href="rogue.css">
+        <link rel="icon" href="img8.jpeg">
+    </head>
+    <body class="bod2">
+        <ul class="navbar">
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="start.html">START</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+<head>
+    <title>Table of Contents</title>
+      
+</head>
+<body a link="white" vlink="white">
+    <div class="div1">
+    <div id="table-of-contents" class="sheet1">
+    <ol>        
+        <li><a href="#section1">INTRODUCTION</a></li>
+        <li><a href="#section2">ARRAYS AND STRINGS</a></li>
+        <li><a href="#section3">FUNCTIONS AND RECURSIONS</a></li>
+        <li><a href="#section4">STRUCTURE AND UNION</a></li>
+        <li><a href="#section5">FILE IO</a></li>
+        <li><a href="#section6">DYNAMIC DATA STRUCTURE</a></li>
+        <li><a href="#section7">PREPROCESSOR DIRECTIVES</a></li>
+        <li><a href="#section8">ERROR HANDLING</a></li>
+        <li><a href="#section9">TYPE CASTING</a></li>
+        
+		<!-- add your list of topics with corresponding file name -->
+    </ol>
+    </div>
+    </div>
+    <div id="content" class="sheet2" >
+        <div id="section1">
+            <h2>1.INTRODUCTION</h2>
+            <p> C programming is a widely-used, general-purpose programming language known for its efficiency, simplicity, and flexibility. It was developed in the early 1970s by Dennis Ritchie at Bell Labs and has since become one of the most influential programming languages, serving as the foundation for many other languages.
+
+                Here's a basic introduction to C programming:
+                
+                Key Characteristics of C:
+                
+                1. Procedural Language:
+                   - C follows a procedural programming paradigm, which means it focuses on functions or procedures that perform tasks step by step.
+                
+                2. Low-Level Language:
+                   - C provides low-level access to memory and hardware components, making it suitable for systems programming and writing operating systems.
+                
+                3. Portable:
+                   - C programs can be easily ported to different platforms with minimal modifications. This is due to the use of a small set of keywords and standard libraries.
+                
+                4. Structured Language:
+                   - C supports structured programming, which promotes code modularity, reusability, and maintainability.
+                
+                5. Efficient:
+                   - C allows direct manipulation of hardware resources and memory, making it efficient for tasks like system programming and embedded systems development.
+                
+                6. Powerful Library Functions:
+                   - C provides a rich set of standard library functions for tasks like input/output operations, string manipulation, memory management, and more.
+                
+                7. Dynamic Memory Allocation:
+                   - C allows dynamic allocation and deallocation of memory using functions like `malloc` and `free`.
+                
+                 Basic Syntax:
+                
+                ```c
+                #include <stdio.h> // Include a header file
+                
+                int main() // Main function, where execution starts
+                {
+                    printf("Hello, World!\n"); // Print a message
+                    return 0; // Return 0 to indicate successful execution
+                }
+                ```
+                
+                Explanation:
+                
+                - `#include <stdio.h>`: This is a preprocessor directive that tells the compiler to include the `stdio.h` header file, which contains standard input/output functions.
+                
+                - `int main()`: This is the main function, where the execution of the program begins. It returns an integer value (0 indicates successful execution).
+                
+                - `printf("Hello, World!\n");`: This line prints "Hello, World!" to the console. `printf` is a standard library function used for output.
+                
+                - `return 0;`: This statement ends the `main` function and returns 0 to the operating system, indicating that the program terminated successfully.
+                
+                Compiling and Running:
+                
+                To run a C program, you typically perform the following steps:
+                
+                1. Write your C code in a text editor and save it with a `.c` extension (e.g., `hello.c`).
+                
+                2. Open a command prompt or terminal window and navigate to the directory containing your C file.
+                
+                3. Use a C compiler (such as GCC for Linux or MinGW for Windows) to compile the code:
+                   ```
+                   gcc -o hello hello.c
+                   ```
+                
+                4. If there are no errors, this will generate an executable file named `hello` (or whatever name you choose with the `-o` option).
+                
+                5. Run the program:
+                   ```
+                   ./hello
+                   ```
+                
+                Hello, World! Program:
+                
+                ```c
+                #include <stdio.h>
+                
+                int main() 
+                {
+                    printf("Hello, World!\n");
+                    return 0;
+                }
+                ```
+                
+                This program prints "Hello, World!" to the console.
+                
+                The "Hello, World!" program is often used as a simple introduction to a programming language, serving as a starting point for learning the basic syntax and structure of a language.</p>
+        </div>
+        <div id="section2">
+            <h2>2.ARRAYS AND STRINGS</h2>
+            <p>Arrays and strings are fundamental data types in C programming. They allow you to store and manipulate multiple pieces of data under a single variable name. Here's an introduction to arrays and strings in C programming:
+
+                Arrays:
+                
+                An array is a collection of elements of the same data type, referenced by a common name. Each element can be accessed by its index (position) in the array.
+                
+                Declaring Arrays:
+                
+                ```c
+                dataType arrayName[arraySize];
+                ```
+                
+                For example:
+                
+                ```c
+                int numbers[5]; // An array of 5 integers
+                char vowels[5]; // An array of 5 characters
+                ```
+                
+                Initializing Arrays:
+                
+                You can initialize an array at the time of declaration:
+                
+                ```c
+                int numbers[5] = {1, 2, 3, 4, 5};
+                ```
+                
+                Accessing Array Elements:
+                
+                Array elements are accessed using indices, starting from 0:
+                
+                ```c
+                int firstElement = numbers[0]; // Accesses the first element (1)
+                ```
+                
+                Array Indices and Bounds:
+                
+                - Arrays in C are zero-indexed, which means the first element is at index 0.
+                - Array indices range from 0 to `arraySize - 1`.
+                
+                Array Size:
+                
+                The size of an array is determined at compile time and cannot be changed during runtime.
+                
+                Iterating Through Arrays:
+                
+                You can use loops (like `for` or `while`) to iterate through the elements of an array.
+                
+                ```c
+                for (int i = 0; i < 5; i++) {
+                    printf("%d ", numbers[i]); // Prints each element of the array
+                }
+                ```
+                
+                Strings:
+                
+                In C, strings are represented as arrays of characters. The last character in the array is a null character (`'\0'`), which marks the end of the string.
+                
+                Declaring Strings:
+                
+                ```c
+                char stringName[numberOfCharacters + 1];
+                ```
+                
+                For example:
+                
+                ```c
+                char greeting[6] = "Hello"; // Includes space for the null character
+                ```
+                
+                #### Initializing Strings:
+                
+                You can initialize a string at the time of declaration:
+                
+                ```c
+                char greeting[] = "Hello"; // Compiler calculates the size automatically
+                ```
+                
+                Accessing Characters in a String:
+                
+                You can access individual characters in a string using indices:
+                
+                ```c
+                char firstChar = greeting[0]; // Accesses the first character ('H')
+                ```
+                
+                String Functions:
+                
+                C provides several standard library functions for working with strings, like `strlen`, `strcpy`, `strcat`, `strcmp`, etc.
+                
+                Input and Output of Strings:
+                
+                When using `scanf` and `printf` for string input/output, use the `%s` format specifier.
+                
+                ```c
+                char name[50];
+                printf("Enter your name: ");
+                scanf("%s", name); // Reads a string without spaces
+                printf("Hello, %s!\n", name);
+                ```
+                
+                Remember, C does not have a dedicated string data type like some other languages. Instead, it uses character arrays to handle strings.
+                
+                Important Note:
+                
+                When working with arrays and strings in C, be cautious about boundary checks to avoid accessing elements beyond the array bounds, which can lead to undefined behavior and potential security vulnerabilities.</p>
+        </div>
+        <div id="section3">
+           <h2>3.</h2>
+            <p></p>  
+        </div> 
+         <div id="section4">
+            <h2>4.</h2>
+            <p> </p>    
+        </div>
+        <div id="section6">
+            <h2>6.looping concept</h2>
+            <p>Looping in JavaScript allows you to execute a block of code repeatedly as long as a specified condition is true. This is particularly useful for tasks that involve repetitive operations or for iterating over collections of data. There are several types of loops in JavaScript:
+
+                1.for Loop:
+                
+                   The `for` loop is used when you know in advance how many times you want to repeat a block of code.
+                
+                   Syntax:
+                   ```javascript
+                   for (initialization; condition; increment/decrement) {
+                       // Code to be executed
+                   }
+                   ```
+                
+                   Example:
+                   ```javascript
+                   for (let i = 0; i < 5; i++) {
+                       console.log("Iteration " + i);
+                   }
+                   ```
+                
+                2. while Loop:
+                
+                   The `while` loop continues to execute a block of code as long as the specified condition is true.
+                
+                   Syntax:
+                   ```javascript
+                   while (condition) {
+                       // Code to be executed
+                   }
+                   ```
+                
+                   Example:
+                   ```javascript
+                   let i = 0;
+                
+                   while (i < 5) {
+                       console.log("Iteration " + i);
+                       i++;
+                   }
+                   ```
+                
+                3. do...while Loop:
+                
+                   The `do...while` loop is similar to the `while` loop, but it ensures that the code block is executed at least once, even if the condition is initially false.
+                
+                   Syntax:
+                   ```javascript
+                   do {
+                       // Code to be executed
+                   } while (condition);
+                   ```
+                
+                   Example:
+                   ```javascript
+                   let i = 0;
+                
+                   do {
+                       console.log("Iteration " + i);
+                       i++;
+                   } while (i < 5);
+                   ```
+                
+                4. for...in Loop:
+                
+                   The `for...in` loop is used to iterate over the properties of an object. It's especially useful for working with objects and their properties.
+                
+                   Syntax:
+                   ```javascript
+                   for (variable in object) {
+                       // Code to be executed
+                   }
+                   ```
+                
+                   Example:
+                   ```javascript
+                   const person = {
+                       firstName: "John",
+                       lastName: "Doe",
+                       age: 30
+                   };
+                
+                   for (let key in person) {
+                       console.log(key + ": " + person[key]);
+                   }
+                   ```
+                
+                5. for...of Loop:
+                
+                   The `for...of` loop is used to iterate over iterable objects like arrays and strings. It provides an easy way to access the elements of a collection.
+                
+                   Syntax:
+                   ```javascript
+                   for (variable of iterable) {
+                       // Code to be executed
+                   }
+                   ```
+                
+                   Example:
+                   ```javascript
+                   const fruits = ["apple", "banana", "cherry"];
+                
+                   for (let fruit of fruits) {
+                       console.log(fruit);
+                   }
+                   ```
+                
+                6. Nested Loops:
+                
+                   You can have loops inside other loops. This is called nested looping and is useful for more complex tasks that involve multiple iterations.
+                
+                   Example:
+                   ```javascript
+                   for (let i = 0; i < 3; i++) {
+                       for (let j = 0; j < 3; j++) {
+                           console.log(i, j);
+                       }
+                   }
+                   ```
+                
+                These looping constructs are essential for creating dynamic, iterative behavior in JavaScript programs. They provide the ability to perform repetitive tasks efficiently and are a fundamental concept in programming. </p>
+        </div>                             
+        <div id="section7">
+            <h2>7.control statement</h2>
+            <p>Control statements in JavaScript allow you to alter the flow of your program based on specific conditions or to execute certain blocks of code repeatedly. They help you create dynamic and interactive applications. Here are some of the key control statements in JavaScript:
+
+                1. **Conditional Statements**:
+                
+                   - **if Statement**:
+                
+                     The `if` statement allows you to execute a block of code if a specified condition is true.
+                
+                     Syntax:
+                     ```javascript
+                     if (condition) {
+                         // Code to execute if the condition is true
+                     }
+                     ```
+                
+                   - **if-else Statement**:
+                
+                     The `if-else` statement allows you to execute one block of code if a condition is true and a different block if the condition is false.
+                
+                     Syntax:
+                     ```javascript
+                     if (condition) {
+                         // Code to execute if the condition is true
+                     } else {
+                         // Code to execute if the condition is false
+                     }
+                     ```
+                
+                   - **if-else-if Statement**:
+                
+                     The `if-else-if` statement allows you to check multiple conditions and execute different code blocks based on the first condition that is true.
+                
+                     Syntax:
+                     ```javascript
+                     if (condition1) {
+                         // Code to execute if condition1 is true
+                     } else if (condition2) {
+                         // Code to execute if condition2 is true
+                     } else {
+                         // Code to execute if all conditions are false
+                     }
+                     ```
+                
+                   - **Switch Statement**:
+                
+                     The `switch` statement is used to select one of many code blocks to be executed. It's useful when you have multiple cases to consider.
+                
+                     Syntax:
+                     ```javascript
+                     switch (expression) {
+                         case value1:
+                             // Code to execute if expression matches value1
+                             break;
+                         case value2:
+                             // Code to execute if expression matches value2
+                             break;
+                         default:
+                             // Code to execute if expression doesn't match any case
+                     }
+                     ```
+                
+                2. **Looping Statements**:
+                
+                   - **for Loop**:
+                
+                     The `for` loop is used when you know in advance how many times you want to repeat a block of code.
+                
+                     Syntax:
+                     ```javascript
+                     for (initialization; condition; increment/decrement) {
+                         // Code to be executed
+                     }
+                     ```
+                
+                   - **while Loop**:
+                
+                     The `while` loop continues to execute a block of code as long as the specified condition is true.
+                
+                     Syntax:
+                     ```javascript
+                     while (condition) {
+                         // Code to be executed
+                     }
+                     ```
+                
+                   - **do...while Loop**:
+                
+                     The `do...while` loop ensures that the code block is executed at least once, even if the condition is initially false.
+                
+                     Syntax:
+                     ```javascript
+                     do {
+                         // Code to be executed
+                     } while (condition);
+                     ```
+                
+                   - **for...in Loop**:
+                
+                     The `for...in` loop is used to iterate over the properties of an object.
+                
+                     Syntax:
+                     ```javascript
+                     for (variable in object) {
+                         // Code to be executed
+                     }
+                     ```
+                
+                   - **for...of Loop**:
+                
+                     The `for...of` loop is used to iterate over iterable objects like arrays and strings.
+                
+                     Syntax:
+                     ```javascript
+                     for (variable of iterable) {
+                         // Code to be executed
+                     }
+                     ```
+                
+                These control statements are crucial for creating dynamic, responsive, and interactive applications in JavaScript. They allow you to make decisions and perform repetitive tasks efficiently.</p>
+        </div>
+        <div id="section8">
+            <h2>8.JAVASCRIPT FUNCTION</h2>
+            <p>A function in JavaScript is a block of reusable code that performs a specific task or set of tasks. Functions are a fundamental concept in programming that helps organize and modularize code, making it easier to manage and maintain.
+
+                Here is an overview of JavaScript functions:
+                
+                1. **Function Declaration**:
+                
+                   You can declare a function using the `function` keyword, followed by the function name and a pair of parentheses. The code block of the function is enclosed in curly braces `{}`.
+                
+                   ```javascript
+                   function functionName(parameters) {
+                       // Code to be executed
+                   }
+                   ```
+                
+                   Example:
+                   ```javascript
+                   function greet(name) {
+                       console.log("Hello, " + name + "!");
+                   }
+                   ```
+                
+                2. **Function Invocation (Calling a Function)**:
+                
+                   To use a function, you need to "call" or "invoke" it by using its name followed by a pair of parentheses. If the function has parameters, you provide the values inside the parentheses.
+                
+                   ```javascript
+                   functionName(arguments);
+                   ```
+                
+                   Example:
+                   ```javascript
+                   greet("John"); // Output: "Hello, John!"
+                   ```
+                
+                3. **Parameters and Arguments**:
+                
+                   Functions can accept parameters, which act as placeholders for values that the function will use when it is called. Arguments are the actual values that are passed to the function when it is called.
+                
+                   Example:
+                   ```javascript
+                   function greet(name) {
+                       console.log("Hello, " + name + "!");
+                   }
+                
+                   greet("John"); // "John" is the argument for the 'name' parameter.
+                   ```
+                
+                4. **Return Statement**:
+                
+                   A function can optionally return a value using the `return` statement. This allows the function to produce an output that can be used in other parts of the program.
+                
+                   Example:
+                   ```javascript
+                   function add(a, b) {
+                       return a + b;
+                   }
+                
+                   let result = add(5, 3); // result will be 8
+                   ```
+                
+                5. **Function Expressions**:
+                
+                   Functions can also be created using function expressions. In this case, the function is assigned to a variable.
+                
+                   Example:
+                   ```javascript
+                   const multiply = function(x, y) {
+                       return x * y;
+                   };
+                   ```
+                
+                6. **Arrow Functions**:
+                
+                   Arrow functions are a more concise way to write functions introduced in ECMAScript 6 (ES6). They have a more compact syntax compared to traditional function expressions.
+                
+                   Example:
+                   ```javascript
+                   const square = (x) => x * x;
+                   ```
+                
+                7. **Anonymous Functions**:
+                
+                   Functions that don't have a name are called anonymous functions. They are often used as callbacks or immediately-invoked function expressions (IIFEs).
+                
+                   Example:
+                   ```javascript
+                   let double = function(x) {
+                       return x * 2;
+                   };
+                   ```
+                
+                8. **Function Scope**:
+                
+                   Variables defined within a function are scoped to that function and are not accessible outside of it.
+                
+                   Example:
+                   ```javascript
+                   function myFunction() {
+                       let localVar = "This is a local variable";
+                       console.log(localVar);
+                   }
+                   ```
+                
+                Functions are an essential part of JavaScript and play a crucial role in building complex applications. They promote code reusability and maintainability, making it easier to manage larger codebases.</p>
+        </div>
+        <div id="section9">
+            <h2>9.ASYNCHRONOUS JAVASCRIPT AND XML</h2>
+            <p>Asynchronous JavaScript and XML (AJAX) is a set of web development techniques that allows web pages to request and receive data from a server without needing to reload the entire page. It enables the creation of dynamic and interactive web applications by allowing data to be exchanged between the client and server in the background.
+
+                Here's an overview of AJAX:
+                
+                1. **Asynchronous Requests**:
+                
+                   In traditional web development, when a user interacts with a webpage (e.g., clicks a button), the browser sends a request to the server, and the entire page is refreshed with the new data. With AJAX, you can make asynchronous requests, which means the page doesn't need to be refreshed. This allows for a smoother and more responsive user experience.
+                
+                2. **XMLHttpRequest Object**:
+                
+                   The `XMLHttpRequest` object is the core of AJAX. It allows JavaScript to make HTTP requests to a server and retrieve data. While the name suggests XML, AJAX is not limited to XML; it can handle various formats, including JSON, HTML, plain text, and more.
+                
+                   Example:
+                   ```javascript
+                   let xhttp = new XMLHttpRequest();
+                   xhttp.onreadystatechange = function() {
+                       if (this.readyState == 4 && this.status == 200) {
+                           // Code to handle the response
+                           console.log(this.responseText);
+                       }
+                   };
+                   xhttp.open("GET", "https://api.example.com/data", true);
+                   xhttp.send();
+                   ```
+                
+                3. **Fetch API**:
+                
+                   The Fetch API is a modern alternative to `XMLHttpRequest` for making HTTP requests. It provides a more flexible and promise-based approach to handling requests.
+                
+                   Example:
+                   ```javascript
+                   fetch('https://api.example.com/data')
+                       .then(response => response.json())
+                       .then(data => console.log(data))
+                       .catch(error => console.error('Error:', error));
+                   ```
+                
+                4. **Promises**:
+                
+                   AJAX often involves handling asynchronous operations, which can be complex. Promises provide a cleaner way to deal with asynchronous code by allowing you to work with them in a more linear fashion.
+                
+                   Example:
+                   ```javascript
+                   function getData() {
+                       return new Promise((resolve, reject) => {
+                           fetch('https://api.example.com/data')
+                               .then(response => response.json())
+                               .then(data => resolve(data))
+                               .catch(error => reject(error));
+                       });
+                   }
+                
+                   getData()
+                       .then(data => console.log(data))
+                       .catch(error => console.error('Error:', error));
+                   ```
+                
+                5. **Cross-Origin Resource Sharing (CORS)**:
+                
+                   AJAX requests are subject to the same-origin policy, which means they can only make requests to the same domain as the page. To request data from a different domain, the server must include appropriate CORS headers.
+                
+                6. **Security Considerations**:
+                
+                   When using AJAX, it's important to be mindful of security concerns, such as protecting against Cross-Site Scripting (XSS) attacks and ensuring that sensitive data is transmitted securely.
+                
+                AJAX is a powerful tool for creating dynamic and interactive web applications. It enables the development of single-page applications (SPAs) and enhances the user experience by allowing for seamless data retrieval and updates without the need for full page reloads.</p>
+        </div>
+
+    </div>
+
+    <script>
+        // JavaScript to handle table of contents links
+        const tocItems = document.querySelectorAll("#table-of-contents ul li a");
+
+        tocItems.forEach((item) => {
+            item.addEventListener("click", (event) => {
+                event.preventDefault();
+                const sectionId = event.target.getAttribute("href").substring(1);
+                const section = document.getElementById(sectionId);
+
+                // Scroll to the selected section
+                section.scrollIntoView({ behavior: "smooth" });
+            });
+        });
+    </script>
+</body>
+</html>

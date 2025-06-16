@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="rogue.css">
+    <link rel="icon" href="asses.jpeg">
+</head>
+<body class="bod3">
+    <div background="bg">
+        <ul class="navbar">
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="start.html">START</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+        <title>SQL Assessment</title>
+    </div>
+    <div class="sheet4">
+        <center>
+            <h1>SQL Assessment</h1>
+        </center>
+        <form id="quizForm">
+            <ol>
+                <li>
+                    <p>Which SQL statement is used to retrieve data from a database?</p>
+                    <input type="radio" name="q1" value="a">a) SELECT
+                    <input type="radio" name="q1" value="b">b) FETCH
+                    <input type="radio" name="q1" value="c">c) EXTRACT
+                </li>
+                <li>
+                    <p>What does SQL stand for?</p>
+                    <input type="radio" name="q2" value="a">a) Structured Query Language
+                    <input type="radio" name="q2" value="b">b) Scripting Query Language
+                    <input type="radio" name="q2" value="c">c) Structured Query Logic
+                </li>
+                <li>
+                    <p>Which SQL clause is used to filter records in a SELECT statement?</p>
+                    <input type="radio" name="q3" value="a">a) WHERE
+                    <input type="radio" name="q3" value="b">b) HAVING
+                    <input type="radio" name="q3" value="c">c) FILTER
+                </li>
+                <li>
+                    <p>What is the result of the SQL query: SELECT COUNT(*) FROM Customers;</p>
+                    <input type="radio" name="q4" value="a">a) The number of records in the Customers table
+                    <input type="radio" name="q4" value="b">b) The number of unique cities in the Customers table
+                    <input type="radio" name="q4" value="c">c) The total order count for all customers
+                </li>
+                <li>
+                    <p>Which SQL statement is used to update data in a database?</p>
+                    <input type="radio" name="q5" value="a">a) MODIFY
+                    <input type="radio" name="q5" value="b">b) UPDATE
+                    <input type="radio" name="q5" value="c">c) ALTER
+                </li>
+                <li>
+                    <p>What is the SQL command to delete all records from a table without deleting the table itself?</p>
+                    <input type="radio" name="q6" value="a">a) DROP TABLE
+                    <input type="radio" name="q6" value="b">b) DELETE ALL
+                    <input type="radio" name="q6" value="c">c) TRUNCATE TABLE
+                </li>
+                <li>
+                    <p>Which SQL keyword is used to sort the result set in ascending order?</p>
+                    <input type="radio" name="q7" value="a">a) ASC
+                    <input type="radio" name="q7" value="b">b) SORT
+                    <input type="radio" name="q7" value="c">c) ORDER BY
+                </li>
+                <li>
+                    <p>What does the SQL JOIN clause do?</p>
+                    <input type="radio" name="q8" value="a">a) Combines rows from two or more tables based on a related column
+                    <input type="radio" name="q8" value="b">b) Removes duplicate records from a table
+                    <input type="radio" name="q8" value="c">c) Creates a new table by combining two or more tables
+                </li>
+            </ol>
+            <center>
+                <input class="submit ans" type="submit" value="Submit">
+            </center>
+        </form>
+
+        <div id="result"></div>
+
+        <script>
+            document.getElementById('quizForm').onsubmit = function(event) {
+                event.preventDefault();
+                var score = 0;
+                var correctAnswers = {
+                    q1: 'a',
+                    q2: 'a',
+                    q3: 'a',
+                    q4: 'a',
+                    q5: 'b',
+                    q6: 'c',
+                    q7: 'a',
+                    q8: 'a'
+                    // Add correct answers for more questions
+                };
+
+                var correctQuestions = []; // To store the question numbers with correct answers
+
+                for (var question in correctAnswers) {
+                    var userAnswer = document.querySelector('input[name="' + question + '"]:checked');
+                    if (userAnswer && userAnswer.value === correctAnswers[question]) {
+                        score++;
+                        correctQuestions.push(question); // Add the question number to the array
+                    }
+                }
+
+                var result = "Your score: " + score + " out of " + Object.keys(correctAnswers).length;
+                document.getElementById('result').innerHTML = result;
+
+                if (correctQuestions.length > 0) {
+
+                    var correctQuestionText = "Correctly answered question(s): " + correctQuestions.join(', ');
+                    document.getElementById('result').innerHTML += "<br>" + correctQuestionText;
+                }
+            };
+        </script>
+    </div>
+</body>
+</html>

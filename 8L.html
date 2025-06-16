@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Learning</title>
+        <link rel="stylesheet" href="rogue.css">
+        <link rel="icon" href="img8.jpeg">
+    </head>
+    <body class="bod2">
+        <ul class="navbar">
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="start.html">START</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+<head>
+    <title>Table of Contents</title>  
+</head>
+<body a link="white" vlink="white">
+    <div class="div1">
+    <div id="table-of-contents" class="sheet1">
+    <ol>        
+        <li><a href="#section1">INTRODUCTION</a></li>
+        <li><a href="#section2">BASICS OF VARIABLES</a></li>
+        <li><a href="#section3">TYPESCRIPT'S COMMENTS</a></li>
+        <li><a href="#section4">ENUM</a></li>
+        <li><a href="#section5">FUNCTIONS</a></li>
+        <li><a href="#section6">MAPPED TYPE</a></li>
+        <li><a href="#section7">OBJECT</a></li>
+        <li><a href="#section8">INDEX SIGNATURE<a></li>
+        <li><a href="#section9">MANIPULATING OBJECTS AND ARRAYS</a></li>
+        
+		<!-- add your list of topics with corresponding file name -->
+    </ol>
+    </div>
+    </div>
+    <div id="content" class="sheet2" >
+        <div id="section1">
+            <h2>1.INTRODUCTION</h2>
+            <p>TypeScript is a powerful programming language that builds on top of JavaScript by adding static types. It's designed to make building large-scale, robust applications easier and more reliable. In this introduction, we'll cover some key concepts and features of TypeScript.
+
+                1. What is TypeScript?
+                   TypeScript is a superset of JavaScript that adds optional static typing and other features to the language. This means that you can write regular JavaScript code in a TypeScript file, and it will work just fine. However, you can also choose to add type annotations to your code to catch potential errors during development.
+                
+                2. Static Typing
+                   One of the main features of TypeScript is its static typing system. This allows you to specify the type of a variable, function, or other constructs in your code. For example:
+                
+                   ```typescript
+                   let name: string = "John";
+                   let age: number = 30;
+                   let isStudent: boolean = true;
+                   ```
+                
+                   This helps catch type-related errors during development and provides better code documentation.
+                
+                3. Interfaces
+                   TypeScript introduces the concept of interfaces, which allow you to define the structure of an object. This can be especially useful when you're working with complex data structures:
+                
+                   ```typescript
+                   interface Person {
+                     name: string;
+                     age: number;
+                   }
+                
+                   let john: Person = { name: "John", age: 30 };
+                   ```
+                
+                4. Classes
+                   TypeScript supports object-oriented programming features like classes, inheritance, and interfaces. This makes it easier to organize and structure your code in a way that's familiar to developers coming from languages like Java or C#.
+                
+                   ```typescript
+                   class Animal {
+                     name: string;
+                
+                     constructor(name: string) {
+                       this.name = name;
+                     }
+                
+                     speak() {
+                       console.log(this.name + " makes a noise.");
+                     }
+                   }
+                
+                   class Dog extends Animal {
+                     speak() {
+                       console.log(this.name + " barks.");
+                     }
+                   }
+                
+                   let dog = new Dog("Fido");
+                   dog.speak(); // Output: Fido barks.
+                   ```
+                
+                5. Generics
+                   TypeScript supports generics, which allow you to write code that can work with a variety of data types. This makes your code more flexible and reusable.
+                
+                   ```typescript
+                   function echo<T>(arg: T): T {
+                     return arg;
+                   }
+                
+                   let myString: string = echo("Hello, TypeScript!");
+                   let myNumber: number = echo(42);
+                   ```
+                
+                6. Tooling and IDE Support
+                   TypeScript is supported by a wide range of development tools and IDEs, including Visual Studio Code, which provides excellent TypeScript integration, including features like auto-completion, refactoring, and type checking.
+                
+                7. Compile Time
+                   Unlike JavaScript, TypeScript needs to be compiled before it can be run in a browser or a Node.js environment. The TypeScript compiler (`tsc`) will convert your TypeScript code into regular JavaScript that can be executed by any JavaScript runtime.
+                
+                8. Compatibility with JavaScript
+                   Existing JavaScript code can be used in TypeScript without any modifications. This means you can gradually adopt TypeScript in your projects.
+                
+                9. Community and Ecosystem
+                   TypeScript has a thriving community and a rich ecosystem of libraries and frameworks. Many popular JavaScript libraries and frameworks like React, Angular, and Express have official TypeScript support.
+                
+                10. Stronger Tooling for Large Projects
+                   TypeScript shines in large, complex projects where strong typing can help catch potential bugs early in the development process. It provides a safety net for refactoring and maintaining code over time.
+                
+                This is just a brief introduction to TypeScript. As you dive deeper, you'll discover many more features and best practices that make it a powerful tool for building modern, scalable applications.</p></div>
+                <hr>
+        <div id="section2">
+            <h2>2.BASICS OF VARIABLES</h2>
+            <p>In TypeScript, like in JavaScript, variables are used to store data that can be manipulated and referenced throughout your code. However, TypeScript introduces static typing, allowing you to specify the type of a variable. This helps catch potential errors and provides better documentation for your code.
+
+                Here are the basics of variables in TypeScript:
+                
+                1. Declaring Variables
+                You can declare variables in TypeScript using `let`, `const`, or `var`.
+                
+                ```typescript
+                let firstName: string = "John"; // Declaring a variable 'firstName' of type string.
+                const age: number = 30; // Declaring a constant 'age' of type number.
+                var isStudent: boolean = true; // Declaring a variable 'isStudent' of type boolean (avoid using 'var' in modern TypeScript code).
+                ```
+                
+                2. Type Annotations
+                
+                Type annotations are used to specify the type of a variable. These annotations are optional, but they help catch type-related errors during development.
+                
+                ```typescript
+                let myNumber: number = 42; // 'myNumber' is of type number.
+                let myString: string = "Hello, TypeScript!"; // 'myString' is of type string.
+                let myBoolean: boolean = true; // 'myBoolean' is of type boolean.
+                ```
+                
+                3. Type Inference
+                
+                TypeScript also has a feature called "type inference". If you don't explicitly specify a type, TypeScript will try to infer it based on the value you assign to the variable.
+                
+                ```typescript
+                let myNumber = 42; // TypeScript infers 'myNumber' as type number.
+                let myString = "Hello, TypeScript!"; // TypeScript infers 'myString' as type string.
+                ```
+                
+                4. Type Compatibility
+                
+                TypeScript is structurally typed, which means that if two types have compatible structure, they are considered compatible. This allows for more flexibility when working with different types.
+                
+                ```typescript
+                let num: number = 42;
+                let anyValue: any = num; // 'anyValue' is of type any, which can hold any value.
+                
+                let myString: string = anyValue; // This will cause a compilation error because types are not compatible.
+                ```
+                
+                5. Reassignment
+                
+                Once you've declared a variable, you can reassign it to a new value as long as the new value is of a compatible type.
+                
+                ```typescript
+                let message: string = "Hello, ";
+                message = "Hi, "; // Reassignment is allowed since both values are of type string.
+                ```
+                
+                6. Const Declarations
+                
+                When you use `const`, the variable cannot be reassigned.
+                
+                ```typescript
+                const pi: number = 3.14;
+                pi = 3; // This will cause a compilation error because 'pi' is a constant.
+                ```
+                
+                7. Block Scope
+                
+                Variables declared with `let` have block scope, meaning they are only accessible within the block they are defined in.
+                
+                ```typescript
+                if (true) {
+                  let blockScoped = "I'm inside a block!";
+                }
+                
+                console.log(blockScoped); // This will cause a compilation error because 'blockScoped' is not accessible here.
+                ```
+                
+                These are some of the basics of working with variables in TypeScript. Understanding how to declare and use variables, as well as how to specify their types, will form the foundation for writing TypeScript code effectively.</p></div>
+                <hr>
+        <div id="section3">
+           <h2>3.TYPESCRIPT'S COMMENTS</h2>
+            <p>Comments in TypeScript, as in most programming languages, are used to add explanatory text within your code. They are ignored by the compiler and serve to provide information for developers (including yourself) who read the code later. TypeScript supports both single-line and multi-line comments.
+
+                1. Single-line Comments
+                
+                Single-line comments start with `//` and continue to the end of the line. They are useful for adding short explanations or notes.
+                
+                ```typescript
+                // This is a single-line comment.
+                let myVariable: number = 42; // You can also add comments after code on the same line.
+                ```
+                
+                2. Multi-line Comments
+                
+                Multi-line comments start with `/*` and end with `*/`. They can span multiple lines and are suitable for more detailed explanations or for temporarily disabling a block of code.
+                
+                ```typescript
+                /*
+                  This is a multi-line comment.
+                  It can span multiple lines.
+                */
+                
+                let isActive: boolean = true;
+                
+                /*
+                  The following code is temporarily disabled:
+                  
+                  let deactivatedCode = 123;
+                */
+                ```
+                
+                3. JSDoc Comments
+                
+                TypeScript also supports JSDoc comments, which allow you to provide detailed documentation for functions, variables, classes, etc. These comments start with `/**` and use special tags to document types, parameters, return values, and more.
+                
+                ```typescript
+                /**
+                 * Represents a person with a name and an age.
+                 * @param {string} name - The name of the person.
+                 * @param {number} age - The age of the person.
+                 * @returns {string} A greeting message.
+                 */
+                function greet(name: string, age: number): string {
+                    return `Hello, my name is ${name} and I am ${age} years old.`;
+                }
+                ```
+                
+                4. Triple-slash Directives
+                
+                Triple-slash directives are used to include references to external files or provide declarations for modules. They start with `///` and are typically used at the beginning of a file.
+                
+                ```typescript
+                /// <reference path="path/to/another/file.ts" />
+                ```
+                
+                5. TODO Comments
+                
+                You can use TODO comments to mark areas of your code that need attention or further development. IDEs like Visual Studio Code often highlight these for easy reference.
+                
+                ```typescript
+                // TODO: Implement error handling here.
+                function processInput(input: string) {
+                    // ...
+                }
+                ```
+                
+                6. Commenting Best Practices
+                
+                - Be Descriptive: Write comments that explain why something is done, not just what is done. This provides context for readers.
+                  
+                - Keep Comments Updated: If you change code functionality, remember to update the corresponding comments.
+                
+                - Avoid Over-commenting: Code should be self-explanatory where possible. Comments should supplement understanding, not replace it.
+                
+                - Use JSDoc for Documentation: For functions, classes, and modules, use JSDoc comments to provide detailed documentation.
+                
+                - Remove Unused Comments: Regularly check your code for unused or outdated comments and remove them.
+                
+                Remember that good commenting practices contribute to code readability and maintainability, making it easier for both yourself and others to work with the code in the future.</p>  
+        </div>
+        <hr> 
+         <div id="section4">
+            <h2>4.ENUM</h2>
+            <p>In TypeScript, an `enum` (short for "enumeration") is a way to define a set of named constants. It's a powerful tool for creating collections of related values, which can make your code more expressive and easier to maintain.
+
+                Here's how you can use enums in TypeScript:
+                
+                1. Defining an Enum
+                
+                You define an enum using the `enum` keyword followed by the name of the enum. Here's an example:
+                
+                ```typescript
+                enum Direction {
+                    Up,
+                    Down,
+                    Left,
+                    Right
+                }
+                ```
+                
+                In this example, `Direction` is the name of the enum, and it defines four constants: `Up`, `Down`, `Left`, and `Right`. By default, these constants are assigned numeric values starting from 0 (Up = 0, Down = 1, Left = 2, Right = 3).
+                
+                2. Accessing Enum Values
+                
+                You can access the values of an enum using dot notation:
+                
+                ```typescript
+                let myDirection: Direction = Direction.Up;
+                console.log(myDirection); // Output: 0
+                ```
+                
+                In this example, `myDirection` is assigned the value `Direction.Up`, which is `0`.
+                
+                3. Custom Enum Values
+
+                You can assign custom values to enum members:
+                
+                ```typescript
+                enum ErrorCode {
+                    NotFound = 404,
+                    Unauthorized = 401,
+                    InternalServerError = 500
+                }
+                
+                let httpError: ErrorCode = ErrorCode.NotFound;
+                console.log(httpError); // Output: 404
+                ```
+                
+                Here, `NotFound` is assigned the value `404`, `Unauthorized` is assigned `401`, and `InternalServerError` is assigned `500`.
+                
+                4. Reverse Mapping
+                
+                Enums in TypeScript are two-way mappings. You can get the name of an enum member from its value:
+                
+                ```typescript
+                let errorName: string = ErrorCode[404];
+                console.log(errorName); // Output: NotFound
+                ```
+                
+                5. Heterogeneous Enums
+                
+                Enums can have both string and numeric members. However, it's recommended to keep all members of the same type for clarity.
+                
+                ```typescript
+                enum Status {
+                    Active = "ACTIVE",
+                    Inactive = 1
+                }
+                
+                let myStatus: Status = Status.Active; // OK
+                let myOtherStatus: Status = Status.Inactive; // OK
+                ```
+                
+                6. Enums with Methods
+                
+                You can add methods to enums:
+                
+                ```typescript
+                enum LogLevel {
+                    Error = 1,
+                    Warn,
+                    Info,
+                    Debug
+                }
+                
+                namespace LogLevel {
+                    export function stringify(level: LogLevel): string {
+                        switch (level) {
+                            case LogLevel.Error:
+                                return "Error";
+                            case LogLevel.Warn:
+                                return "Warn";
+                            case LogLevel.Info:
+                                return "Info";
+                            case LogLevel.Debug:
+                                return "Debug";
+                            default:
+                                return "Unknown";
+                        }
+                    }
+                }
+                
+                let logLevelString: string = LogLevel.stringify(LogLevel.Warn);
+                console.log(logLevelString); // Output: Warn
+                ```
+                
+                In this example, the `LogLevel` enum has a `stringify` method that converts a numeric log level to its corresponding string representation.
+                
+                Enums are useful for improving code readability and maintainability, especially in cases where you have a fixed set of related values. They can make your code more expressive and help prevent "magic numbers" in your codebase.</p>    
+        </div>
+        <hr>
+        <div id="section5">
+            <h2>5.FUNCTIONS</h2>
+            <p>In TypeScript, functions are blocks of code that perform a specific task or calculate a value. They can be declared with or without parameters, and can optionally return a value.
+
+                Here are the basics of working with functions in TypeScript:
+                
+                1. Function Declaration
+                
+                You can declare a function using the `function` keyword followed by the function name:
+                
+                ```typescript
+                function sayHello() {
+                    console.log("Hello!");
+                }
+                ```
+                
+                2. Function Parameters
+                
+                You can specify parameters when declaring a function. These are the values that the function expects when it's called.
+                
+                ```typescript
+                function greet(name: string) {
+                    console.log(`Hello, ${name}!`);
+                }
+                ```
+                
+                3. Function Return Type
+                
+                You can specify the type of value that a function returns using a type annotation:
+                
+                ```typescript
+                function add(x: number, y: number): number {
+                    return x + y;
+                }
+                ```
+                
+                In this example, the function `add` takes two parameters (`x` and `y`), both of type `number`, and it returns a value of type `number`.
+                
+                4. Optional Parameters
+                
+                You can make parameters optional by adding a `?` after the parameter name in the function declaration. Optional parameters must come after required parameters.
+                
+                ```typescript
+                function printMessage(message: string, times?: number) {
+                    if (times) {
+                        for (let i = 0; i < times; i++) {
+                            console.log(message);
+                        }
+                    } else {
+                        console.log(message);
+                    }
+                }
+                ```
+                
+                In this example, `times` is an optional parameter.
+                
+                5. Default Parameter Values
+                
+                You can provide default values for parameters:
+                
+                ```typescript
+                function greet(name: string = "User") {
+                    console.log(`Hello, ${name}!`);
+                }
+                ```
+                
+                6. Anonymous Functions
+                
+                You can also define functions without a name. These are often called anonymous functions or function expressions.
+                
+                ```typescript
+                let multiply = function(x: number, y: number): number {
+                    return x * y;
+                };
+                ```
+                
+                7. Arrow Functions
+                
+                Arrow functions provide a more concise syntax for writing anonymous functions:
+                
+                ```typescript
+                let square = (x: number) => x * x;
+                ```
+                
+                8. Function Overloading
+
+                You can provide multiple function signatures for the same function implementation. This is useful when a function can accept different types of parameters.
+                
+                ```typescript
+                function display(value: number): void;
+                function display(value: string): void;
+                function display(value: number | string): void {
+                    console.log(value);
+                }
+                ```
+                
+                9. Rest Parameters
+                
+                You can use the rest parameter syntax to represent an indefinite number of arguments as an array:
+                
+                ```typescript
+                function sum(...numbers: number[]): number {
+                    return numbers.reduce((total, num) => total + num, 0);
+                }
+                ```
+                
+                10. Function Types
+                
+                Functions can be assigned to variables or passed as arguments. In these cases, you may need to specify the function type.
+                
+                ```typescript
+                let myFunction: (x: number, y: number) => number = function(x, y) {
+                    return x + y;
+                };
+                ```
+                
+                These are the fundamentals of working with functions in TypeScript. Understanding how to declare, define, and use functions, as well as how to handle parameters and return values, is essential for writing effective and reusable code.</p>
+        </div>
+        <hr>                             
+        <div id="section6">
+            <h2>6.MAPPED TYPE</h2>
+            <p>Mapped types in TypeScript allow you to create new types based on the properties of an existing type. They are useful for generating new types with similar structures or for transforming existing types.
+
+                The general form of a mapped type looks like this:
+                
+                ```typescript
+                type NewType = { [Property in ExistingType]: NewPropertyType };
+                ```
+                
+                Here's an explanation of each part:
+                
+                - `NewType`: This is the name of the new type you're defining.
+                - `Property`: This is a placeholder for each property in the existing type.
+                - `ExistingType`: This is the type whose properties you're iterating over.
+                - `NewPropertyType`: This is the type you assign to the new property.
+                
+                Let's look at some examples to illustrate how mapped types work:
+                
+                ### 1. **Basic Example**
+                
+                ```typescript
+                type Flags = {
+                    isRead: boolean;
+                    isWrite: boolean;
+                };
+                
+                type ReadonlyFlags = { readonly [P in keyof Flags]: boolean };
+                
+                // 'ReadonlyFlags' will have the same properties as 'Flags', but all properties will be readonly.
+                ```
+                
+                ### 2. **Making All Properties Optional**
+                
+                ```typescript
+                type Person = {
+                    name: string;
+                    age: number;
+                    email: string;
+                };
+                
+                type PartialPerson = { [P in keyof Person]?: Person[P] };
+                
+                // 'PartialPerson' will have the same properties as 'Person', but all properties will be optional.
+                ```
+                
+                ### 3. **Creating a New Type with Modified Properties**
+                
+                ```typescript
+                type Product = {
+                    id: number;
+                    name: string;
+                    price: number;
+                };
+                
+                type DiscountedProduct = { [P in keyof Product]: P extends 'price' ? number : Product[P] };
+                
+                // 'DiscountedProduct' will have the same properties as 'Product', but the 'price' property will be of type 'number'.
+                ```
+                
+                ### 4. **Restricting Property Types**
+                
+                ```typescript
+                type User = {
+                    id: string;
+                    name: string;
+                    age: number;
+                };
+                
+                type StringPropertiesOnly<T> = { [P in keyof T]: T[P] extends string ? T[P] : never };
+                type StringUser = StringPropertiesOnly<User>;
+                
+                // 'StringUser' will have the same properties as 'User', but only properties of type 'string'.
+                ```
+                
+                ### 5. **Creating a Union Type**
+                
+                ```typescript
+                type Fruit = 'apple' | 'banana' | 'cherry';
+                
+                type FruitInfo = { [P in Fruit]: { color: string } };
+                
+                // 'FruitInfo' will be { apple: { color: string }, banana: { color: string }, cherry: { color: string } }.
+                ```
+                
+                Mapped types provide a powerful tool for creating new types based on existing ones. They're particularly useful when you want to apply transformations or create variations of types in a concise and reusable way.</p>
+        </div>
+        <hr>
+        <div id="section7">
+            <h2>7.OBJECT</h2>
+            <p>In JavaScript and TypeScript, an object is a fundamental data type that allows you to group together related data and behavior. Objects are collections of key-value pairs, where the keys (also known as properties) are strings (or Symbols) and the values can be any data type.
+
+                Here's how you can work with objects in TypeScript:
+                
+                ### 1. **Object Literal Syntax**
+                
+                You can create an object using the object literal syntax, which involves curly braces `{}`:
+                
+                ```typescript
+                let person = {
+                    firstName: "John",
+                    lastName: "Doe",
+                    age: 30,
+                    isStudent: false
+                };
+                ```
+                
+                In this example, `person` is an object with four properties: `firstName`, `lastName`, `age`, and `isStudent`.
+                
+                ### 2. **Accessing Object Properties**
+                
+                You can access the properties of an object using dot notation or square bracket notation:
+                
+                ```typescript
+                console.log(person.firstName); // Output: "John"
+                console.log(person["lastName"]); // Output: "Doe"
+                ```
+                
+                ### 3. **Adding or Modifying Properties**
+                
+                You can add or modify properties of an object:
+                
+                ```typescript
+                person.email = "john.doe@example.com";
+                person.age = 31;
+                ```
+                
+                ### 4. **Object Methods**
+                
+                You can define functions as properties of an object, which are known as methods:
+                
+                ```typescript
+                let calculator = {
+                    add: function(x: number, y: number) {
+                        return x + y;
+                    },
+                    subtract: function(x: number, y: number) {
+                        return x - y;
+                    }
+                };
+                
+                console.log(calculator.add(5, 3)); // Output: 8
+                ```
+                
+                ### 5. **Object Destructuring**
+                
+                You can extract values from an object and assign them to variables in a concise way:
+                
+                ```typescript
+                let { firstName, age } = person;
+                console.log(firstName, age); // Output: "John" 31
+                ```
+                
+                ### 6. **Object Spread Operator**
+                
+                You can combine properties from multiple objects into a new object using the spread operator (`...`):
+                
+                ```typescript
+                let user = { ...person, username: "johndoe123" };
+                ```
+                
+                ### 7. **Object Methods and 'this'**
+                
+                When a function is a property of an object, it's referred to as a method. Within a method, `this` refers to the object itself.
+                
+                ```typescript
+                let car = {
+                    brand: "Toyota",
+                    year: 2020,
+                    getInfo: function() {
+                        return `${this.brand} ${this.year}`;
+                    }
+                };
+                
+                console.log(car.getInfo()); // Output: "Toyota 2020"
+                ```
+                
+                ### 8. **Creating Objects with Constructor Functions or Classes**
+                
+                You can create objects using constructor functions or classes for more structured object-oriented programming:
+                
+                ```typescript
+                class Person {
+                    constructor(public firstName: string, public lastName: string) {}
+                    
+                    getFullName() {
+                        return `${this.firstName} ${this.lastName}`;
+                    }
+                }
+                
+                let johnDoe = new Person("John", "Doe");
+                console.log(johnDoe.getFullName()); // Output: "John Doe"
+                ```
+                
+                ### 9. **Using Interfaces with Objects**
+                
+                You can use interfaces to define the shape of objects:
+                
+                ```typescript
+                interface Point {
+                    x: number;
+                    y: number;
+                }
+                
+                let point: Point = { x: 10, y: 20 };
+                ```
+                
+                These are some of the basics of working with objects in TypeScript. Understanding how to create, access, and manipulate objects is crucial for building complex applications and organizing your data effectively.</p>
+        </div>
+        <hr>
+        <div id="section8">
+            <h2>8.INDEX SIGNATURE</h2>
+            <p>In TypeScript, an index signature allows you to define a specific shape for the keys of an object. It enables you to declare that an object will have properties with specific types for keys that are not known in advance.
+
+                The syntax for an index signature looks like this:
+                
+                ```typescript
+                {
+                    [propertyName: keyType]: valueType;
+                }
+                ```
+                
+                Here's an explanation of each part:
+                
+                - `propertyName`: This is the name you give to the key. It can be any valid string, but it's typically something like a number or a string.
+                
+                - `keyType`: This specifies the type of the key. It can be `string` or `number`.
+                
+                - `valueType`: This specifies the type of the value associated with the key.
+                
+                Let's look at some examples to understand how index signatures work:
+                
+                ### 1. **Using Number Keys**
+                
+                ```typescript
+                interface NumberDictionary {
+                    [index: number]: string;
+                }
+                
+                let myDictionary: NumberDictionary = {
+                    0: "Zero",
+                    1: "One",
+                    2: "Two"
+                };
+                ```
+                
+                In this example, `NumberDictionary` is an interface with an index signature that says the keys must be of type `number`, and the values must be of type `string`.
+                
+                ### 2. **Using String Keys**
+                
+                ```typescript
+                interface StringDictionary {
+                    [index: string]: number;
+                }
+                
+                let myDictionary: StringDictionary = {
+                    "one": 1,
+                    "two": 2,
+                    "three": 3
+                };
+                ```
+                
+                Here, `StringDictionary` is an interface that specifies string keys and numeric values.
+                
+                ### 3. **Combining String and Number Keys**
+                
+                You can even combine string and number keys, but the value type must be compatible with both:
+                
+                ```typescript
+                interface HybridDictionary {
+                    [index: string]: number;
+                    [index: number]: number;
+                }
+                
+                let myDictionary: HybridDictionary = {
+                    "one": 1,
+                    2: 2,
+                    3: 3
+                };
+                ```
+                
+                ### 4. **Restricting the Value Type**
+                
+                You can also restrict the value type to a specific subtype:
+                
+                ```typescript
+                interface Dictionary<T> {
+                    [index: string]: T;
+                }
+                
+                let myDictionary: Dictionary<number> = {
+                    "one": 1,
+                    "two": 2,
+                    "three": 3
+                };
+                ```
+                
+                Here, `Dictionary<T>` is a generic interface that can be used to create dictionaries with values of any type.
+                
+                ### 5. **Read-Only Index Signatures**
+                
+                You can make the index signature read-only by using the `readonly` keyword:
+                
+                ```typescript
+                interface ReadOnlyDictionary {
+                    readonly [index: string]: number;
+                }
+                
+                let myDictionary: ReadOnlyDictionary = {
+                    "one": 1,
+                    "two": 2,
+                    "three": 3
+                };
+                
+                myDictionary["four"] = 4; // Error: Index signature in type 'ReadOnlyDictionary' only permits reading.
+                ```
+                
+                This prevents you from adding or modifying properties after the object is created.
+                
+                Index signatures provide flexibility in working with objects, especially when you don't know all the possible keys in advance. However, be cautious when using them, as it can make your code less predictable and harder to understand.</p>
+        </div>
+        <hr>
+        <div id="section9">
+            <h2>9.MANIPULATING OBJECTS AND ARRAYS.</h2>
+            <p>Manipulating objects and arrays is a fundamental aspect of working with data in JavaScript and TypeScript. Here are some common operations you might perform:
+
+                ### Manipulating Objects:
+                
+                1. **Adding or Modifying Properties**:
+                
+                   ```typescript
+                   let person = { firstName: "John", lastName: "Doe" };
+                
+                   // Adding a new property
+                   person.age = 30;
+                
+                   // Modifying an existing property
+                   person.lastName = "Smith";
+                   ```
+                
+                2. **Deleting Properties**:
+                
+                   ```typescript
+                   let person = { firstName: "John", lastName: "Doe" };
+                   delete person.lastName;
+                   ```
+                
+                3. **Object Destructuring**:
+                
+                   ```typescript
+                   let person = { firstName: "John", lastName: "Doe" };
+                   let { firstName, lastName } = person;
+                   ```
+                
+                4. **Object Spread Operator**:
+                
+                   ```typescript
+                   let person = { firstName: "John", lastName: "Doe", age: 30 };
+                   let newPerson = { ...person, nationality: "USA" };
+                   ```
+                
+                5. **Merging Objects**:
+                
+                   ```typescript
+                   let person = { firstName: "John" };
+                   let details = { lastName: "Doe", age: 30 };
+                   let mergedPerson = { ...person, ...details };
+                   ```
+                
+                ### Manipulating Arrays:
+                
+                1. **Adding Elements**:
+                
+                   ```typescript
+                   let numbers = [1, 2, 3];
+                   numbers.push(4); // Adds 4 to the end
+                   numbers.unshift(0); // Adds 0 to the beginning
+                   ```
+                
+                2. **Removing Elements**:
+                
+                   ```typescript
+                   let numbers = [1, 2, 3, 4, 5];
+                   numbers.pop(); // Removes the last element (returns 5)
+                   numbers.shift(); // Removes the first element (returns 1)
+                   ```
+                
+                3. **Slicing and Splicing**:
+                
+                   ```typescript
+                   let numbers = [1, 2, 3, 4, 5];
+                   let subArray = numbers.slice(1, 3); // Returns [2, 3]
+                
+                   // Splice: Remove elements and/or insert new ones
+                   numbers.splice(1, 2, 6, 7); // Removes elements at index 1 and 2, and inserts 6 and 7
+                   ```
+                
+                4. **Iterating Over Arrays**:
+                
+                   ```typescript
+                   let numbers = [1, 2, 3, 4, 5];
+                   for (let number of numbers) {
+                       console.log(number);
+                   }
+                   ```
+                
+                5. **Mapping and Filtering**:
+                
+                   ```typescript
+                   let numbers = [1, 2, 3, 4, 5];
+                   let doubled = numbers.map(num => num * 2); // Returns [2, 4, 6, 8, 10]
+                   let evens = numbers.filter(num => num % 2 === 0); // Returns [2, 4]
+                   ```
+                
+                6. **Reducing**:
+                
+                   ```typescript
+                   let numbers = [1, 2, 3, 4, 5];
+                   let sum = numbers.reduce((acc, curr) => acc + curr, 0); // Returns 15
+                   ```
+                
+                Remember, JavaScript and TypeScript allow for a wide range of operations on objects and arrays. These examples cover some of the most common scenarios, but there are many more techniques and methods available to handle different situations.</p>
+        </div>
+
+
+    </div>
+
+    <script>
+        // JavaScript to handle table of contents links
+        const tocItems = document.querySelectorAll("#table-of-contents ul li a");
+
+        tocItems.forEach((item) => {
+            item.addEventListener("click", (event) => {
+                event.preventDefault();
+                const sectionId = event.target.getAttribute("href").substring(1);
+                const section = document.getElementById(sectionId);
+
+                // Scroll to the selected section
+                section.scrollIntoView({ behavior: "smooth" });
+            });
+        });
+    </script>
+</body>
+</html>

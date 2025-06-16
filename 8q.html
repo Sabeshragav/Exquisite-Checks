@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="rogue.css">
+    <link rel="icon" href="asses.jpeg">
+</head>
+<body class="bod3">
+    <div background="bg">
+        <ul class="navbar">
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="start.html">START</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+        <title>TypeScript Assessment</title>
+    </div>
+    <div class="sheet4">
+        <center>
+            <h1>TypeScript Assessment</h1>
+        </center>
+        <form id="quizForm">
+            <ol>
+                <li>
+                    <p>How do you declare a variable in TypeScript?</p>
+                    <input type="radio" name="q1" value="a">a) var x = 10;
+                    <input type="radio" name="q1" value="b">b) let x = 10;
+                    <input type="radio" name="q1" value="c">c) const x = 10;
+                </li>
+                <li>
+                    <p>What is the output of the following TypeScript code snippet?</p>
+                    <pre>
+                        let x: number = 10;
+                        console.log(typeof x);
+                        x = "hello";
+                        console.log(typeof x);
+                    </pre>
+                    <input type="radio" name="q2" value="a">a) number and string
+                    <input type="radio" name="q2" value="b">b) string and number
+                    <input type="radio" name="q2" value="c">c) number and any
+                </li>
+                <li>
+                    <p>Which TypeScript loop is used to iterate over the elements of an array?</p>
+                    <input type="radio" name="q3" value="a">a) for
+                    <input type="radio" name="q3" value="b">b) while
+                    <input type="radio" name="q3" value="c">c) for...of
+                </li>
+                <li>
+                    <p>In TypeScript, what is used to handle error conditions and exceptions?</p>
+                    <input type="radio" name="q4" value="a">a) try
+                    <input type="radio" name="q4" value="b">b) catch
+                    <input type="radio" name="q4" value="c">c) throw
+                </li>
+                <li>
+                    <p>What keyword is used in TypeScript to specify the type of a variable?</p>
+                    <input type="radio" name="q5" value="a">a) type
+                    <input type="radio" name="q5" value="b">b) typeof
+                    <input type="radio" name="q5" value="c">c) as
+                </li>
+                <li>
+                    <p>Which TypeScript module is used for date and time operations?</p>
+                    <input type="radio" name="q6" value="a">a) Date
+                    <input type="radio" name="q6" value="b">b) datetime
+                    <input type="radio" name="q6" value="c">c) moment
+                </li>
+                <li>
+                    <p>In which programming language is TypeScript primarily implemented?</p>
+                    <input type="radio" name="q7" value="a">a) JavaScript
+                    <input type="radio" name="q7" value="b">b) Java
+                    <input type="radio" name="q7" value="c">c) TypeScript
+                </li>
+                <li>
+                    <p>What will be the output of the following TypeScript code?</p>
+                    <pre>
+                        let a: number[] = [1, 2, 3];
+                        let b: number[] = a;
+                        b[0] = 5;
+                        console.log(a.join(" "));
+                    </pre>
+                    <input type="radio" name="q8" value="a">a) 1 2 3
+                    <input type="radio" name="q8" value="b">b) 5 2 3
+                    <input type="radio" name="q8" value="c">c) 1 5 3
+                </li>
+            </ol>
+            <center>
+                <input class="submit ans" type="submit" value="Submit">
+            </center>
+        </form>
+
+        <div id="result"></div>
+
+        <script>
+            document.getElementById('quizForm').onsubmit = function(event) {
+                event.preventDefault();
+                var score = 0;
+                var correctAnswers = {
+                    q1: 'c',
+                    q2: 'a',
+                    q3: 'c',
+                    q4: 'b',
+                    q5: 'a',
+                    q6: 'a',
+                    q7: 'c',
+                    q8: 'b'
+                    // Add correct answers for more questions
+                };
+
+                var correctQuestions = []; // To store the question numbers with correct answers
+
+                for (var question in correctAnswers) {
+                    var userAnswer = document.querySelector('input[name="' + question + '"]:checked');
+                    if (userAnswer && userAnswer.value === correctAnswers[question]) {
+                        score++;
+                        correctQuestions.push(question); // Add the question number to the array
+                    }
+                }
+
+                var result = "Your score: " + score + " out of " + Object.keys(correctAnswers).length;
+                document.getElementById('result').innerHTML = result;
+
+                if (correctQuestions.length > 0) {
+
+                    var correctQuestionText = "Correctly answered question(s): " + correctQuestions.join(', ');
+                    document.getElementById('result').innerHTML += "<br>" + correctQuestionText;
+                }
+            };
+        </script>
+    </div>
+</body>
+</html>

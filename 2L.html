@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Learning</title>
+        <link rel="stylesheet" href="rogue.css">
+        <link rel="icon" href="img8.jpeg">
+    </head>
+    <body class="bod3">
+        <ul class="navbar">
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="start.html">START</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+<head>
+    <title>Table of Contents</title>
+      
+</head>
+<body a link="white" vlink="white">
+    <div class="div1">
+    <div id="table-of-contents" class="sheet1">
+    <ol>        
+        <li><a href="#section1">JAVA BASICS</a></li>
+        <li><a href="#section2">JAVA INPUT/OUTPUT</a></li>
+        <li><a href="#section3">JAVA OPERATORS</a></li>
+        <li><a href="#section4">JAVA STRINGS</a></li>
+        <li><a href="#section5">JAVA ARRAYS</a></li>
+        <li><a href="#section6">JAVA OOPs CONCEPT</a></li>
+        <li><a href="#section7">JAVA CONSTRUCTORS</a></li>
+        <li><a href="#section8">JAVA METHODS </a></li>
+        <li><a href="#section9">JAVA INTERFACE</a></li>
+        <li><a href="#section10">JAVA CLASSES </a></li>
+        <li><a href="#section11">JAVA PACKAGES</a></li>
+        <li><a href="#section12">JAVA EXCEPTION HANDLING</a></li>
+		<!-- add your list of topics with corresponding file name -->
+    </ol>
+    </div>
+    </div>
+    <div id="content" class="sheet2" >
+        <div id="section1">
+            <h2>1.JAVA BASICS</h2>
+            <p>Java is a versatile and widely-used programming language known for its platform independence, making it a popular choice for a variety of applications. Here are some fundamental concepts and syntax in Java:
+
+                1. Syntax and Structure:
+                   - Java programs are written in classes. A class is a blueprint for objects. Every Java program must have a public static void main(String[] args) method which serves as the entry point of the program.
+                   
+                2. Data Types:
+                   - Java has several data types including integers (int), floating-point numbers (double), characters (char), and booleans (boolean). 
+                
+                3. Variables:
+                   - Variables hold data. They need to be declared with a specific type before they can be used.
+                   
+                4. Operators:
+                   - Java supports various operators such as arithmetic operators (+, -, *, /), comparison operators (==, !=, >, <), and logical operators (&&, ||, !).
+                   
+                5. Control Structures:
+                   - Java includes common control structures like loops (for, while, do-while) and conditional statements (if, else, switch-case).
+                
+                6. Arrays:
+                   - Arrays are collections of elements of the same type. They are used to store multiple values under a single name.
+                
+                7. Strings:
+                   - Strings in Java are objects, and they have a rich set of methods for manipulation.
+                
+                8. Functions (Methods):
+                   - Functions in Java are called methods. They are blocks of code that perform a specific task. Methods are defined within a class.
+                
+                9. Object-Oriented Programming (OOP):
+                   - Java is an object-oriented language. This means that programs are structured around objects and their interactions. Key concepts include classes, objects, inheritance, polymorphism, encapsulation, and abstraction.
+                
+                10. Exception Handling:
+                    - Java provides mechanisms to handle errors or exceptional situations with try, catch, and finally blocks.
+                
+                11. Packages and Libraries:
+                    - Java has a vast standard library that provides ready-to-use classes and methods for various tasks. It also supports the creation and use of custom packages.
+                
+                12. Input and Output (I/O):
+                    - Java provides libraries for reading input from the console (System.in) and writing output (System.out). It also supports file handling.
+                
+                13. Interfaces and Abstract Classes:
+                    - These are used to achieve abstraction and to define contracts that classes must implement.
+                
+                14. Threads and Concurrency:
+                    - Java has built-in support for multithreading, allowing programs to perform multiple tasks concurrently.
+                
+                15. Collections Framework:
+                    - Java provides a rich set of classes and interfaces for handling collections of objects, such as lists, sets, and maps.
+                
+                These are the foundational elements of Java programming. Mastering these basics will provide a strong foundation for building more complex applications. Keep in mind that practice and hands-on coding exercises are crucial for becoming proficient in Java.</p>
+        </div>
+        <hr>
+        <div id="section2">
+            <h2>2.JAVA INPUT/OUTPUT</h2>
+            <p>Java provides several ways to handle input and output operations. Here are some of the most commonly used methods:Using System.out and System.in:System.out is used for standard output (printing to the console).System.in is used for standard input (reading from the console).Example:System.out.println("Hello, World!"); // Output
+                Scanner scanner = new Scanner(System.in);
+                int num = scanner.nextInt(); // InputUsing Scanner class:The Scanner class is used to read input from various sources like keyboard, files, etc.Example:Scanner scanner = new Scanner(System.in);
+                String name = scanner.nextLine(); // Reads a line of textUsing BufferedReader and InputStreamReader:These classes are used for reading input from streams, providing more efficient reading compared to Scanner for large inputs.Example:BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+                String line = reader.readLine();Using PrintWriter and BufferedWriter:These classes are used for writing output to streams. They are similar to BufferedReader and InputStreamReader but for writing.Example:PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter("output.txt")));
+                writer.println("Hello, World!");
+                writer.close();File I/O:Java provides classes like FileInputStream, FileOutputStream, FileReader, and FileWriter for reading from and writing to files.Example:try {
+                    FileInputStream fis = new FileInputStream("input.txt");
+                    int content;
+                    while ((content = fis.read()) != -1) {
+                        System.out.print((char) content);
+                    }
+                    fis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }Serialization:Java provides the ObjectInputStream and ObjectOutputStream classes for reading and writing objects.Example:ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("object.dat"));
+                out.writeObject(myObject);
+                out.close();
+                
+                ObjectInputStream in = new ObjectInputStream(new FileInputStream("object.dat"));
+                MyObject obj = (MyObject) in.readObject();
+                in.close();
+            </p>
+                
+        </div>
+        <hr>
+        <div id="section3">
+            <h2>3.JAVA OPERATORS</h2>
+            <p>Java provides a wide range of operators that allow you to perform various operations on variables and values. Here are some of the most commonly used operators in Java:Arithmetic Operators:+ Addition- Subtraction* Multiplication/ Division% Modulus (remainder after division)Example:int a = 10;
+                int b = 5;
+                int sum = a + b; // sum will be 15
+                int difference = a - b; // difference will be 5
+                int product = a * b; // product will be 50
+                int quotient = a / b; // quotient will be 2
+                int remainder = a % b; // remainder will be 0Assignment Operators:= Assigns a value to a variable.+= Adds right operand to the left operand and then assigns.-= Subtracts right operand from the left operand and then assigns.*= Multiplies right operand with the left operand and then assigns./= Divides left operand by right operand and then assigns.%= Takes modulus using two operands and assigns the result to the left operand.Example:int x = 10;
+                x += 5; // equivalent to x = x + 5; (x will be 15)Comparison Operators:== Equal to!= Not equal to> Greater than< Less than>= Greater than or equal to<= Less than or equal toExample:int a = 10;
+                int b = 5;
+                boolean isEqual = (a == b); // isEqual will be false
+                boolean isNotEqual = (a != b); // isNotEqual will be true
+                boolean isGreaterThan = (a > b); // isGreaterThan will be trueLogical Operators:&& Logical AND|| Logical OR! Logical NOTExample:boolean x = true;
+                boolean y = false;
+                boolean result1 = x && y; // result1 will be false
+                boolean result2 = x || y; // result2 will be true
+                boolean result3 = !x; // result3 will be falseIncrement/Decrement Operators:++ Increment by 1-- Decrement by 1Example:int count = 5;
+                count++; // count will be 6 after this operationConditional (Ternary) Operator:condition ? expression1 : expression2If the condition is true, it evaluates expression1; otherwise, it evaluates expression2.Example:int x = 10;
+                int y = 20;
+                int result = (x > y) ? x : y; // result will be 20 </p>
+        </div>
+        <hr>
+        <div id="section4">
+            <h2>4.JAVA STRINGS</h2>
+        <p>
+            strings are objects that represent sequences of characters. They are instances of the String class, which is part of the java.lang package. Here are some key points about Java strings:String Declaration:You can create a string in Java using either double quotes (") or by using the String constructor.Example:String str1 = "Hello"; // Using double quotes
+            String str2 = new String("World"); // Using the String constructorString Concatenation:Strings can be concatenated using the + operator.Example:String greeting = "Hello";
+            String name = "John";
+            String message = greeting + " " + name; // Results in "Hello John"String Length:You can find the length of a string using the length() method.Example:String text = "Hello, World!";
+            int length = text.length(); // length will be 13String Comparison:You can compare strings using methods like equals() and compareTo().Example:String str1 = "hello";
+            String str2 = "world";
+            boolean isEqual = str1.equals(str2); // isEqual will be false
+            int comparisonResult = str1.compareTo(str2);
+            // comparisonResult will be a negative number indicating str1 is "before" str2 in lexicographic orderString Indexing:You can access individual characters in a string using their index. Note that Java uses 0-based indexing.Example:String text = "Java";
+            char firstChar = text.charAt(0); // firstChar will be 'J'String Manipulation:The String class provides many useful methods for manipulating strings, such as substring(), toUpperCase(), toLowerCase(), replace(), and more.Example:String text = "hello, world";
+            String subString = text.substring(0, 5); // subString will be "hello"
+            String upperCase = text.toUpperCase(); // upperCase will be "HELLO, WORLD"String Formatting:Java offers various ways to format strings, including the printf() method for formatted output.Example:String name = "John";
+            int age = 30;
+            System.out.printf("Name: %s, Age: %d", name, age);
+            // Output will be "Name: John, Age: 30"String Immutability:Strings are immutable, meaning their value cannot be changed after creation. When you perform operations on strings, it actually creates a new string object.Example:String original = "Hello";
+            String modified = original.concat(", World!"); // Creates a new string
+        </p>  
+        </div> 
+        <hr>
+         <div id="section5">
+            <h2>5.JAVA ARRAYS</h2>
+            <p>In Java, arrays are used to store a fixed-size sequential collection of elements of the same type. Here are some key points about Java arrays:
+
+1. Array Declaration:
+   - Arrays are declared using square brackets [] after the data type.
+
+   Example:
+   java
+   int[] numbers; // Declares an array of integers
+   String[] names; // Declares an array of strings
+   
+
+2. Array Initialization:
+   - Arrays can be initialized at the time of declaration or later using the new keyword.
+
+   Example:
+   java
+   int[] numbers = {1, 2, 3, 4, 5}; // Initializes an array of integers
+   String[] names = new String[3]; // Initializes an array of strings with size 3
+   
+
+3. Accessing Array Elements:
+   - Array elements are accessed using an index. The index starts at 0 for the first element.
+
+   Example:
+   java
+   int[] numbers = {10, 20, 30, 40};
+   int secondElement = numbers[1]; // Retrieves the element at index 1 (which is 20)
+   
+
+4. Array Length:
+   - You can find the length of an array using the length property.
+
+   Example:
+   java
+   int[] numbers = {10, 20, 30, 40};
+   int length = numbers.length; // length will be 4
+   
+
+5. Iterating Over Arrays:
+   - You can use loops like for or foreach to iterate over the elements of an array.
+
+   Example:
+   java
+   int[] numbers = {10, 20, 30, 40};
+   for (int i = 0; i < numbers.length; i++) {
+       System.out.println(numbers[i]);
+   }
+   
+
+6. Multi-dimensional Arrays:
+   - Java supports multi-dimensional arrays, which are arrays of arrays.
+
+  
+
+7. Array Copying:
+   - You can copy elements from one array to another using methods like System.arraycopy() or Arrays.copyOf().
+
+   Example:
+   java
+   int[] source = {1, 2, 3};
+   int[] destination = new int[source.length];
+   System.arraycopy(source, 0, destination, 0, source.length);
+   
+
+8. Arrays Class:
+   - The java.util.Arrays class provides various utility methods for working with arrays, including sorting, searching, and filling.
+
+   Example:
+   java
+   int[] numbers = {5, 3, 1, 4, 2};
+   Arrays.sort(numbers); // Sorts the array in ascending order
+   
+
+These are some of the fundamental aspects of working with arrays in Java. They are widely used for organizing and manipulating data in Java programs.
+</p>    
+        </div>
+        <hr>
+        <div id="section6">
+            <h2>6.JAVA OOPs CONCEPT</h2>
+            <p> Object-Oriented Programming (OOP) is a programming paradigm based on the concept of "objects", which are instances of classes. Java is an object-oriented programming language, and it incorporates several key OOP concepts. Here are the main OOP concepts in Java:
+
+                1. Class and Object:
+                   - A class is a blueprint or template for creating objects. It defines the attributes (fields) and behaviors (methods) that objects of the class will have. An object is an instance of a class.
+                
+                   Example:
+                   java
+                   class Car {
+                       String color;
+                       int speed;
+                
+                       void accelerate() {
+                           // Code to increase the speed
+                       }
+                
+                       void brake() {
+                           // Code to apply brakes
+                       }
+                   }
+                
+                   Car myCar = new Car(); // Creating an object of class Car
+                   myCar.color = "Red";
+                   myCar.speed = 60;
+                   myCar.accelerate(); // Call the accelerate method
+                   
+                
+                2. Inheritance:
+                   - Inheritance allows one class (subclass) to inherit the attributes and behaviors of another class (superclass). This promotes code reusability and the creation of hierarchies.
+                
+                   Example:
+                   java
+                   class Vehicle {
+                       String color;
+                       int speed;
+                   }
+                
+                   class Car extends Vehicle {
+                       void accelerate() {
+                           // Code to increase the speed
+                       }
+                
+                       void brake() {
+                           // Code to apply brakes
+                       }
+                   }
+                   
+                
+                3. Encapsulation:
+                   - Encapsulation is the concept of bundling the data (fields) and code (methods) that operate on the data together in a single unit, known as a class. It helps in hiding the implementation details and provides a clear interface to interact with the class.
+                
+                   Example:
+                   java
+                   class BankAccount {
+                       private double balance;
+                
+                       public void deposit(double amount) {
+                           // Code to add money to the balance
+                       }
+                
+                       public void withdraw(double amount) {
+                           // Code to deduct money from the balance
+                       }
+                   }
+                   
+                
+                4. Polymorphism:
+                   - Polymorphism means the ability of a method to do different things based on the object that it is acting upon. This can be achieved through method overloading (multiple methods with the same name but different parameters) and method overriding (subclass providing a specific implementation of a method defined in the superclass).
+                
+                   Example:
+                   java
+                   class Shape {
+                       void draw() {
+                           System.out.println("Drawing a shape");
+                       }
+                   }
+                
+                   class Circle extends Shape {
+                       @Override
+                       void draw() {
+                           System.out.println("Drawing a circle");
+                       }
+                   }
+                   
+                
+                5. Abstraction:
+                   - Abstraction is the process of hiding the implementation details and showing only the essential features of an object. It is achieved through abstract classes and interfaces.
+                
+                   Example:
+                   java
+                   abstract class Shape {
+                       abstract void draw(); // Abstract method with no implementation
+                   }
+                   
+                
+                6. Interface:
+                   - An interface is a contract specifying a set of methods that a class implementing the interface must provide. It allows for multiple inheritance in Java.
+                
+                   Example:
+                   java
+                   interface Shape {
+                       void draw(); // Method signature
+                   }
+                
+                   class Circle implements Shape {
+                       @Override
+                       void draw() {
+                           System.out.println("Drawing a circle");
+                       }
+                   }
+                   
+                
+                These are the fundamental Object-Oriented Programming concepts in Java. They provide a powerful way to structure and organize code, making it more reusable, maintainable, and modular.</p>
+        </div> 
+        <hr>                            
+        <div id="section7">
+            <h2>7.JAVA CONSTRUCTOR</h2>
+            <p>In Java, a constructor is a special method used to initialize an object of a class. It has the same name as the class and does not have a return type, not even void. Here are some key points about constructors:
+
+                1. *Purpose of Constructors*:
+                   - Constructors are used to initialize the state of an object when it is created. They allocate memory for the object and set its initial values.
+                
+                2. *Default Constructor*:
+                   - If a class does not explicitly define any constructors, Java provides a default constructor with no parameters. This constructor initializes the object with default values (e.g., 0 for numeric types, null for objects).
+                
+                   Example:
+                   java
+                   class MyClass {
+                       int num;
+                       String text;
+                       // Default constructor provided by Java
+                   }
+                   
+                
+                3. *Parameterized Constructors*:
+                   - You can define your own constructors with parameters to allow for custom initialization of objects.
+                
+                   Example:
+                   java
+                   class Person {
+                       String name;
+                       int age;
+                
+                       // Parameterized constructor
+                       public Person(String name, int age) {
+                           this.name = name;
+                           this.age = age;
+                       }
+                   }
+                
+                   // Creating an object with a parameterized constructor
+                   Person john = new Person("John Doe", 30);
+                   
+                
+                4. *Constructor Overloading*:
+                   - Like methods, constructors can be overloaded. This means you can have multiple constructors with different parameter lists in the same class.
+                
+                   Example:
+                   java
+                   class Rectangle {
+                       int length;
+                       int width;
+                
+                       // Constructor with one parameter
+                       public Rectangle(int side) {
+                           this.length = side;
+                           this.width = side;
+                       }
+                
+                       // Constructor with two parameters
+                       public Rectangle(int length, int width) {
+                           this.length = length;
+                           this.width = width;
+                       }
+                   }
+                   
+                
+                5. **Using this Keyword**:
+                   - Within a constructor, this refers to the current instance of the class. It is often used to disambiguate between class fields and parameters with the same name.
+                
+                   Example:
+                   java
+                   class Book {
+                       String title;
+                       String author;
+                
+                       // Parameterized constructor using 'this'
+                       public Book(String title, String author) {
+                           this.title = title;
+                           this.author = author;
+                       }
+                   }
+                   
+                
+                6. **Chaining Constructors (Constructor Overloading)**:
+                   - Constructors can call other constructors using this(). This is called constructor chaining.
+                
+                   Example:
+                   java
+                   class MyClass {
+                       int num;
+                       String text;
+                
+                       // Constructor with one parameter
+                       public MyClass(int num) {
+                           this.num = num;
+                       }
+                
+                       // Constructor with two parameters (chaining the previous constructor)
+                       public MyClass(int num, String text) {
+                           this(num); // Calls the first constructor
+                           this.text = text;
+                       }
+                   }
+                   
+                
+                7. *Static Initializer Block*:
+                   - Apart from constructors, Java allows you to define static initializer blocks that run when a class is first loaded into memory.
+                
+                   Example:
+                   java
+                   class Example {
+                       static int staticVariable;
+                       int instanceVariable;
+                
+                       static {
+                           // This code runs when the class is first loaded
+                           staticVariable = 42;
+                       }
+                
+                       {
+                           // This code runs when an instance of the class is created
+                           instanceVariable = 10;
+                       }
+                   }
+                   
+                
+                Constructors play a crucial role in object creation and initialization in Java. They are responsible for setting up the initial state of objects, which is important for correct behavior throughout the object's lifecycle. </p>
+        </div>
+        <hr>
+        <div id="section8">
+            <h2>8.JAVA METHODS</h2>
+            <p>In Java, methods are blocks of code within a class that perform specific tasks. They encapsulate functionality and can be called to perform those tasks. Here are some key points about methods:
+
+                1. *Method Declaration*:
+                   - A method is declared using a specific syntax that includes the access modifier, return type, method name, and parameter list (if any).
+                
+                   Example:
+                   java
+                   public int add(int a, int b) {
+                       return a + b;
+                   }
+                   
+                
+                2. *Access Modifiers*:
+                   - Access modifiers (e.g., public, private, protected) define the level of visibility of a method. They control which parts of the program can access the method.
+                
+                   Example:
+                   java
+                   public void display() {
+                       // Code for displaying something
+                   }
+                
+                   private void doSomething() {
+                       // Code for doing something (accessible only within the same class)
+                   }
+                   
+                
+                3. *Return Type*:
+                   - The return type specifies the type of value that the method will return. If the method does not return any value, the return type is void.
+                
+                   Example:
+                   java
+                   public int calculateSum(int[] numbers) {
+                       int sum = 0;
+                       for (int num : numbers) {
+                           sum += num;
+                       }
+                       return sum;
+                   }
+                   
+                
+                4. *Method Parameters*:
+                   - Methods can accept zero or more parameters. These are the values that are passed to the method for it to work on.
+                
+                   Example:
+                   java
+                   public void greet(String name) {
+                       System.out.println("Hello, " + name + "!");
+                   }
+                   
+                
+                5. *Method Overloading*:
+                   - Method overloading allows a class to have multiple methods with the same name but different parameter lists. This is useful when you want to perform similar operations on different types of data.
+                
+                   Example:
+                   java
+                   public int add(int a, int b) {
+                       return a + b;
+                   }
+                
+                   public double add(double a, double b) {
+                       return a + b;
+                   }
+                   
+                
+                6. *Static Methods*:
+                   - A static method belongs to the class rather than to any specific instance. It can be called without an instance of the class.
+                
+                   Example:
+                   java
+                   public static void printMessage() {
+                       System.out.println("This is a static method.");
+                   }
+                   
+                
+                7. *Method Invocation*:
+                   - Methods are invoked using the dot notation, with the object or class name followed by the method name and its arguments (if any).
+                
+                   Example:
+                   java
+                   int result = calculator.add(5, 3); // Invoking the add method of an object 'calculator'
+                   
+                
+                8. *Recursive Methods*:
+                   - A method can call itself. This is known as recursion. It's useful for solving problems that can be broken down into smaller, similar sub-problems.
+                
+                   Example:
+                   java
+                   public int factorial(int n) {
+                       if (n == 0) {
+                           return 1;
+                       } else {
+                           return n * factorial(n - 1);
+                       }
+                   }
+                   
+                
+                9. *Varargs*:
+                   - Java supports variable-length argument lists (varargs) that allow you to pass a variable number of arguments to a method.
+                
+                   Example:
+                   java
+                   public int sum(int... numbers) {
+                       int total = 0;
+                       for (int num : numbers) {
+                           total += num;
+                       }
+                       return total;
+                   }
+                   
+                
+                These are some of the fundamental aspects of working with methods in Java. They are crucial for structuring code, promoting code reuse, and organizing functionality within a class.</p>
+        </div>
+        <hr>
+        <div id="section9">
+            <h2>9.JAVA INTERFACE</h2>
+            <p>In Java, an interface is a reference type that defines a contract of methods that a class implementing the interface must provide. Here are some key points about interfaces:
+
+                1. *Interface Declaration*:
+                   - An interface is declared using the interface keyword followed by the interface name.
+                
+                   Example:
+                   java
+                   interface Shape {
+                       double calculateArea();
+                       void display();
+                   }
+                   
+                
+                2. *Method Signatures*:
+                   - An interface contains method signatures without implementations. It defines what methods a class implementing the interface should have.
+                
+                   Example:
+                   java
+                   interface Printable {
+                       void print();
+                   }
+                   
+                
+                3. *Implementing an Interface*:
+                   - To implement an interface, a class uses the implements keyword followed by the interface name. The class must then provide implementations for all the methods defined in the interface.
+                
+                   Example:
+                   java
+                   class Circle implements Shape {
+                       double radius;
+                
+                       @Override
+                       public double calculateArea() {
+                           return Math.PI * radius * radius;
+                       }
+                
+                       @Override
+                       public void display() {
+                           System.out.println("This is a circle.");
+                       }
+                   }
+                   
+                
+                4. *Multiple Interfaces*:
+                   - A class can implement multiple interfaces, separating them with commas.
+                
+                   Example:
+                   java
+                   class MyClass implements Interface1, Interface2, Interface3 {
+                       // Implement methods from all interfaces
+                   }
+                   
+                
+                5. *Default Methods* (Java 8 and later):
+                   - An interface can provide a default implementation for its methods. This allows existing interfaces to be extended without breaking existing code.
+                
+                   Example:
+                   java
+                   interface Greet {
+                       default void sayHello() {
+                           System.out.println("Hello!");
+                       }
+                   }
+                   
+                
+                6. *Static Methods* (Java 8 and later):
+                   - Interfaces can have static methods that are associated with the interface itself, rather than any particular instance of the interface.
+                
+                   Example:
+                   java
+                   interface Utility {
+                       static void doSomething() {
+                           System.out.println("Doing something.");
+                       }
+                   }
+                   
+                
+                7. *Functional Interfaces* (Java 8 and later):
+                   - A functional interface is an interface with a single abstract method. These interfaces can be used with lambda expressions.
+                
+                   Example:
+                   java
+                   @FunctionalInterface
+                   interface Calculator {
+                       int calculate(int a, int b);
+                   }
+                   
+                
+                8. *Marker Interfaces*:
+                   - These are interfaces with no methods at all. They are used to indicate a certain capability or feature of a class.
+                
+                   Example:
+                   java
+                   interface Serializable {
+                   }
+                
+                   // This interface is used to indicate that instances of the class can be serialized.
+                   
+                
+                Interfaces play a crucial role in achieving abstraction and achieving multiple inheritance-like behavior in Java. They are widely used in Java programming, especially in scenarios where different classes need to share a common behavior.</p>
+        </div>
+        <hr>
+        <div id="section10">
+            <h2>10.JAVA CLASSES </h2>
+            <p>In Java, a class is a blueprint for creating objects. It defines the properties (attributes) and behaviors (methods) that objects of the class will have. Here are some key points about classes:
+
+                1. *Class Declaration*:
+                   - A class is declared using the class keyword followed by the class name.
+                
+                   Example:
+                   java
+                   class Person {
+                       String name;
+                       int age;
+                
+                       void displayInfo() {
+                           System.out.println("Name: " + name + ", Age: " + age);
+                       }
+                   }
+                   
+                
+                2. *Object Creation*:
+                   - An object is an instance of a class. To create an object, you use the new keyword followed by the class name, followed by parentheses.
+                
+                   Example:
+                   java
+                   Person john = new Person();
+                   john.name = "John Doe";
+                   john.age = 30;
+                   
+                
+                3. **Fields (Attributes)**:
+                   - Fields represent the properties or attributes of an object. They store data that defines the state of the object.
+                
+                   Example:
+                   java
+                   class Book {
+                       String title;
+                       String author;
+                       int pageCount;
+                   }
+                   
+                
+                4. **Methods (Behaviors)**:
+                   - Methods define the behaviors or actions that an object can perform. They contain the code that implements the functionality of the class.
+                
+                   Example:
+                   java
+                   class Calculator {
+                       int add(int a, int b) {
+                           return a + b;
+                       }
+                
+                       int multiply(int a, int b) {
+                           return a * b;
+                       }
+                   }
+                   
+                
+                5. *Constructor*:
+                   - A constructor is a special method used to initialize an object of a class. It has the same name as the class and does not have a return type.
+                
+                   Example:
+                   java
+                   class Person {
+                       String name;
+                       int age;
+                
+                       // Constructor
+                       public Person(String name, int age) {
+                           this.name = name;
+                           this.age = age;
+                       }
+                   }
+                   
+                
+                6. *Access Modifiers*:
+                   - Access modifiers (e.g., public, private, protected) define the level of visibility of a class or its members. They control which parts of the program can access the class or its members.
+                
+                   Example:
+                   java
+                   public class MyClass {
+                       // ...
+                   }
+                
+                   private int myField;
+                   
+                
+                7. *Encapsulation*:
+                   - Encapsulation is the concept of bundling the data (fields) and code (methods) that operate on the data together in a single unit (i.e., a class). It helps in hiding the implementation details and provides a clear interface to interact with the class.
+                
+                   Example:
+                   java
+                   class BankAccount {
+                       private double balance;
+                
+                       public void deposit(double amount) {
+                           // Code to add money to the balance
+                       }
+                
+                       public void withdraw(double amount) {
+                           // Code to deduct money from the balance
+                       }
+                   }
+                   
+                
+                8. *Inheritance*:
+                   - Inheritance allows one class (subclass) to inherit the attributes and behaviors of another class (superclass). This promotes code reusability and the creation of hierarchies.
+                
+                   Example:
+                   java
+                   class Animal {
+                       void eat() {
+                           System.out.println("Eating...");
+                       }
+                   }
+                
+                   class Dog extends Animal {
+                       void bark() {
+                           System.out.println("Barking...");
+                       }
+                   }
+                   
+                
+                Classes are fundamental to object-oriented programming in Java. They provide a way to define the structure and behavior of objects, allowing for code reuse and organization.</p>
+         </div>
+         <hr>
+         <div id="section11">
+            <h2>11.JAVA PACKAGES</h2>
+            <p>In Java, a package is a way to organize related classes and interfaces into a single unit. This helps in managing and maintaining a large number of classes and prevents naming conflicts. Here are some key points about Java packages:
+
+                1. *Package Declaration*:
+                   - A package is declared at the beginning of a Java source file using the package keyword followed by the package name.
+                
+                   Example:
+                   java
+                   package com.example.myapp;
+                   
+                
+                2. *Package Naming Conventions*:
+                   - Package names are typically in lowercase letters. They often use a reverse domain naming convention to ensure uniqueness.
+                
+                   Example:
+                   
+                   com.example.myapp
+                   
+                
+                3. *Package Hierarchy*:
+                   - Packages can be nested within each other, creating a hierarchical structure.
+                
+                   Example:
+                   
+                   com.example.myapp.utils
+                   com.example.myapp.models
+                   
+                
+                4. *Import Statement*:
+                   - To use classes or interfaces from another package, you need to import them. The import statement is used for this purpose.
+                
+                   Example:
+                   java
+                   import java.util.ArrayList;
+                   import java.util.List;
+                   
+                
+                5. *Default Package*:
+                   - If a class does not specify a package, it belongs to the default package (i.e., it has no package).
+                
+                   Example:
+                   java
+                   // This class belongs to the default package
+                   class MyClass {
+                       // ...
+                   }
+                   
+                
+                6. *Access Modifiers and Packages*:
+                   - Classes and members with public access modifier are accessible from any other class or package. Classes and members with protected access modifier are accessible within the same package and by subclasses. Classes and members with default (no access modifier) access are accessible within the same package. Classes and members with private access modifier are only accessible within the same class.
+                
+                7. **Jar Files (Java Archive)**:
+                   - A JAR file is a package file format that contains compiled Java classes, associated metadata, and resources (images, text, etc.) in a single file. It's a way to package Java classes and distribute them as a single unit.
+                
+                8. *Classpath*:
+                   - The classpath is a system environment variable that tells the Java Virtual Machine (JVM) where to find user-defined classes and packages.
+                
+                   Example:
+                   
+                   java -classpath /path/to/classes MyProgram
+                   
+                
+                9. *Standard Java Packages*:
+                   - Java provides a set of standard packages like java.lang, java.util, java.io, etc., which contain core classes and interfaces that are commonly used in Java programs.
+                
+                10. *Creating Your Own Packages*:
+                    - To create your own package, you simply organize your classes in a directory structure that matches the package name and include the package statement at the beginning of your source files.
+                
+                    Example directory structure:
+                    
+                    com
+                    └── example
+                        └── myapp
+                            └── MyClass.java
+                    
+                
+                    Example MyClass.java:
+                    java
+                    package com.example.myapp;
+                
+                    public class MyClass {
+                        // ...
+                    }
+                    
+                
+                Packages are an essential part of Java development, helping to organize and manage complex applications. They also facilitate code reuse and maintainability.
+            </p>
+        </div>
+        <hr>
+        <div id="section12">
+            <h2>12.JAVA EXCEPTION HANDLING</h2>
+            <p>Exception handling in Java is a mechanism to deal with runtime errors (exceptions) that occur during the execution of a program. It allows the program to gracefully handle unexpected situations without crashing. Here are some key points about exception handling in Java:
+
+                1. *Types of Exceptions*:
+                   - Java has two main types of exceptions: checked and unchecked.
+                     - Checked exceptions are checked at compile time, and the compiler ensures that they are either caught or declared to be thrown.
+                     - Unchecked exceptions (also known as runtime exceptions) are not checked at compile time and can occur at runtime. They typically represent programming errors.
+                
+                2. *try-catch Blocks*:
+                   - The try block contains the code that might throw an exception. The catch block catches the exception and handles it.
+                
+                   Example:
+                   java
+                   try {
+                       // Code that might throw an exception
+                   } catch (ExceptionType e) {
+                       // Code to handle the exception
+                   }
+                   
+                
+                3. *Multiple catch Blocks*:
+                   - You can have multiple catch blocks to handle different types of exceptions.
+                
+                   Example:
+                   java
+                   try {
+                       // Code that might throw an exception
+                   } catch (ExceptionType1 e1) {
+                       // Code to handle ExceptionType1
+                   } catch (ExceptionType2 e2) {
+                       // Code to handle ExceptionType2
+                   }
+                   
+                
+                4. *finally Block*:
+                   - The finally block is used to execute code that should be run regardless of whether an exception occurs or not. It is typically used for cleanup operations.
+                
+                   Example:
+                   java
+                   try {
+                       // Code that might throw an exception
+                   } catch (ExceptionType e) {
+                       // Code to handle the exception
+                   } finally {
+                       // Code to be executed regardless of whether an exception occurred or not
+                   }
+                   
+                
+                5. *Throwing Exceptions*:
+                   - You can use the throw keyword to explicitly throw an exception.
+                
+                   Example:
+                   java
+                   if (someCondition) {
+                       throw new SomeException("Some error message");
+                   }
+                   
+                
+                6. *Custom Exceptions*:
+                   - You can create your own custom exception classes by extending existing exception classes or implementing the Throwable interface.
+                
+                   Example:
+                   java
+                   class CustomException extends Exception {
+                       public CustomException(String message) {
+                           super(message);
+                       }
+                   }
+                   
+                
+                7. *Using try-with-resources* (Java 7 and later):
+                   - The try-with-resources statement is a try statement that declares one or more resources. A resource is an object that must be closed after the program is finished with it.
+                
+                   Example:
+                   java
+                   try (FileInputStream fis = new FileInputStream("file.txt")) {
+                       // Code to read from the file
+                   } catch (IOException e) {
+                       // Code to handle the exception
+                   }
+                   
+                
+                8. *Checked vs. Unchecked Exceptions*:
+                   - Checked exceptions are typically used for situations that a program can anticipate and recover from, while unchecked exceptions are usually caused by programming errors.
+                
+                   Example:
+                   java
+                   try {
+                       // Code that might throw a checked exception
+                   } catch (IOException e) {
+                       // Code to handle IOException
+                   }
+                   
+                
+                Exception handling is an important aspect of writing robust and reliable Java programs. It helps to gracefully handle unexpected situations and provides a way to recover from errors.
+            </p>
+        </div>

@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Learning</title>
+        <link rel="stylesheet" href="rogue.css">
+        <link rel="icon" href="img8.jpeg">
+    </head>
+    <body class="bod2">
+        <ul class="navbar">
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="start.html">START</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+<head>
+    <title>Table of Contents</title>  
+</head>
+<body a link="white" vlink="white">
+    <div class="div1">
+    <div id="table-of-contents" class="sheet1">
+    <ol>        
+        <li><a href="#section1">INTRODUCTION</a></li>
+        <li><a href="#section2">Basic SQL Queries</a></li>
+        <li><a href="#section3">Database Design and Normalization</a></li>
+        <li><a href="#section4">Joins</a></li>
+        <li><a href="#section5">Aggregate Functions</a></li>
+        <li><a href="#section6">Subqueries</a></li>
+        <li><a href="#section7">Indexes and Performance Optimization</a></li>
+        <li><a href="#section8">Views and Stored Procedures<a></li>
+        <li><a href="#section9">Data Manipulation Language (DML)</a></li>
+        
+		<!-- add your list of topics with corresponding file name -->
+    </ol>
+    </div>
+    </div>
+    <div id="content" class="sheet2" >
+        <div id="section1">
+            <h2>1.INTRODUCTION</h2>
+            <p>SQL, or Structured Query Language, is a powerful programming language designed for managing, querying, and manipulating relational databases. It allows users to interact with databases by writing commands, or queries, to perform various operations like retrieving, inserting, updating, and deleting data.
+
+                Key Concepts in SQL:
+                
+                1.Relational Databases:
+                   - SQL is designed for working with relational databases, which organize data into tables (relations) consisting of rows (records) and columns (attributes).
+                
+                2.Tables and Schemas:
+                   - A table is a collection of related data organized into rows and columns. Multiple tables can be organized into schemas.
+                
+                3.Data Types:
+                   - SQL supports various data types (e.g., integer, text, date) to define the kind of data that can be stored in a column.
+                
+                4.Primary Keys and Foreign Keys:
+                   - Primary keys uniquely identify each record in a table. Foreign keys establish relationships between tables.
+                
+                5.Queries:
+                   - SQL queries are commands that retrieve or manipulate data in a database. They can be simple (SELECT) or complex (subqueries, joins).
+                
+                6.Inserting, Updating, and Deleting Data:
+                   - SQL allows for the insertion of new records, updating existing records, and deleting unwanted records from a table.
+                
+                7.Joins:
+                   - Joins are used to combine rows from two or more tables based on a related column between them.
+                
+                8.Aggregation Functions:
+                   - Functions like COUNT, SUM, AVG, MAX, and MIN are used to perform calculations on groups of data.
+                
+                9.Constraints:
+                   - Constraints are rules applied to columns to enforce data integrity. Common constraints include NOT NULL, UNIQUE, and CHECK.
+                
+                10.Indexing:
+                    - Indexes improve the performance of queries by allowing the database to quickly locate specific rows.
+                
+                11.Views:
+                    - Views are virtual tables created from the result of a SELECT query. They provide a way to simplify complex queries or present specific information to users.
+                
+                12.Transactions and ACID Properties:
+                    - Transactions ensure that a series of database operations are performed reliably and consistently. ACID properties (Atomicity, Consistency, Isolation, Durability) ensure data integrity.
+                
+               Popular Database Management Systems (DBMS):
+                
+                1.MySQL:
+                   - An open-source relational database management system widely used in web development.
+                
+                2.PostgreSQL:
+                   - A powerful, open-source object-relational database system known for its robustness and extensibility.
+                
+                3.SQLite:
+                   - A self-contained, serverless, zero-configuration, transactional SQL database engine.
+                
+                4.Microsoft SQL Server:
+                   - A relational database management system developed by Microsoft.
+                
+                5.Oracle Database:
+                   - A comprehensive and powerful relational database management system.
+                
+                6.MariaDB:
+                   - An open-source fork of MySQL designed for performance and reliability.
+                
+                Learning SQL is essential for anyone working with databases, whether it's for web development, data analysis, or other applications. It provides a powerful and standardized way to interact with and manage data.</p></div>
+                <hr>
+        
+         <div id="section2">
+            <h2>2.Basic SQL Queries</h2>
+            <p>Basic SQL queries are fundamental to interacting with a database. They allow you to retrieve, insert, update, and delete data from a database. Here are some common basic SQL queries you'll encounter:
+
+               1. SELECT Statement:
+                
+                The `SELECT` statement is used to retrieve data from a database table. It can be as simple as selecting all rows and columns or as complex as applying filters and aggregating data.
+                
+               Select all data from a table:
+                ```sql
+                SELECT  FROM table_name;
+                ```
+                
+                Select specific columns from a table:
+                ```sql
+                SELECT column1, column2 FROM table_name;
+                ```
+                
+                Select data with conditions:
+                ```sql
+                SELECT * FROM table_name WHERE condition;
+                ```
+                
+                2. INSERT Statement:
+                
+                The `INSERT` statement is used to add new records to a database table.
+                
+                Insert data into a table:
+                ```sql
+                INSERT INTO table_name (column1, column2) VALUES (value1, value2);
+                ```
+                
+                 3. UPDATE Statement:
+                
+                The `UPDATE` statement is used to modify existing records in a database table.
+                
+                Update data in a table:
+                ```sql
+                UPDATE table_name SET column1 = new_value WHERE condition;
+                ```
+                
+                4. DELETE Statement:
+                
+                The `DELETE` statement is used to remove records from a database table.
+                
+                Delete data from a table:
+                ```sql
+                DELETE FROM table_name WHERE condition;
+                ```
+                
+                5. Aliases:
+                
+                Aliases allow you to rename columns or tables for more readable query results.
+                
+                Column alias:
+                ```sql
+                SELECT column_name AS alias_name FROM table_name;
+                ```
+                
+                Table alias:
+                ```sql
+                SELECT t1.column_name</p></div>
+                <hr>
+        <div id="section3">
+           <h2>3.Database Design and Normalization</h2>
+            <p>Database design and normalization are crucial steps in creating an efficient and organized database. They involve structuring data in a way that minimizes redundancy and ensures data integrity. Here are the key concepts of database design and normalization in SQL:
+
+                 1. Database Design Basics:
+                
+                - Identify Entities and Relationships:
+                  - Determine the entities (objects) in your system and the relationships between them (one-to-one, one-to-many, many-to-many).
+                
+                - Define Attributes:
+                  - For each entity, identify the attributes (properties) that need to be stored.
+                
+                - Create Tables:
+                  - Translate entities and attributes into tables and columns. Each table represents an entity, and each column represents an attribute.
+                
+                - Define Primary Keys:
+                  - Choose a unique identifier for each record in a table. This is known as the primary key.
+                
+                2. Normalization:
+                
+                Normalization is the process of organizing data in a database to eliminate redundancy and dependency. It involves decomposing tables into smaller, related tables while maintaining data integrity.
+                
+                Normal Forms:
+                
+                1. First Normal Form (1NF):
+                   - A table is in 1NF if it has no repeating groups and all entries in each column are atomic (indivisible).
+                
+                2. Second Normal Form (2NF):
+                   - A table is in 2NF if it is in 1NF and all non-key attributes are fully functionally dependent on the entire primary key.
+                
+                3. Third Normal Form (3NF):
+                   - A table is in 3NF if it is in 2NF and all non-key attributes are functionally dependent only on the primary key.
+                
+                ### Example:
+                
+                Consider a database for a library. We have two entities: `Books` and `Authors`. The initial design might be:
+                
+                Books Table:
+                ```
+                | ISBN        | Title           | Author        | Genre    |
+                |------------|-----------------|---------------|----------|
+                | 978-0-12345 | SQL Basics      | John Doe      | IT       |
+                | 978-0-67890 | Web Development | Jane Smith    | IT       |
+                ```
+                
+                Authors Table:
+                ```
+                | AuthorID | AuthorName |
+                |----------|------------|
+                | 1        | John Doe   |
+                | 2        | Jane Smith |
+                ```
+                
+                Issues:
+                - Redundancy: The author names are duplicated in the `Books` table.
+                - Dependency: The `Author` column in `Books` depends on `AuthorID`, but `AuthorID` is not part of the `Books` table.
+                
+                Normalized Design:
+                
+                Books Table:
+                ```
+                | ISBN        | Title           | AuthorID | Genre    |
+                |------------|-----------------|----------|----------|
+                | 978-0-12345 | SQL Basics      | 1        | IT       |
+                | 978-0-67890 | Web Development | 2        | IT       |
+                ```
+                
+                Authors Table:
+                ```
+                | AuthorID | AuthorName |
+                |----------|------------|
+                | 1        | John Doe   |
+                | 2        | Jane Smith |
+                ```
+                
+                Benefits of Normalization:
+                
+                - Reduces data redundancy.
+                - Avoids update anomalies (problems that arise when data is not properly organized).
+                - Improves data integrity.
+                - Enhances database performance.
+                
+                However, it's important to strike a balance. Over-normalization can lead to complex queries and slower performance in some cases.
+                
+                Understanding database design and normalization is crucial for building efficient and scalable databases that can handle large amounts of data while maintaining data integrity.</p>  
+        </div> 
+        <hr>
+         <div id="section4">
+            <h2>4.Joins</h2>
+            <p> Joins in SQL are used to combine rows from two or more tables based on related columns between them. They are crucial for retrieving information from multiple tables in a database. There are several types of joins:
+
+                ### 1. **INNER JOIN**:
+                
+                The INNER JOIN keyword selects records that have matching values in both tables.
+                
+                **Syntax**:
+                ```sql
+                SELECT columns
+                FROM table1
+                INNER JOIN table2 ON table1.column = table2.column;
+                ```
+                
+                **Example**:
+                
+                Consider two tables, `Customers` and `Orders`:
+                
+                **Customers Table**:
+                ```
+                | CustomerID | Name      |
+                |------------|-----------|
+                | 1          | John Doe  |
+                | 2          | Jane Smith|
+                | 3          | Bob Brown |
+                ```
+                
+                **Orders Table**:
+                ```
+                | OrderID | CustomerID | Product   |
+                |---------|------------|-----------|
+                | 101     | 1          | Product A |
+                | 102     | 2          | Product B |
+                | 103     | 1          | Product C |
+                ```
+                
+                **Query**:
+                ```sql
+                SELECT Orders.OrderID, Customers.Name, Orders.Product
+                FROM Orders
+                INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;
+                ```
+                
+                **Result**:
+                ```
+                | OrderID | Name       | Product   |
+                |---------|------------|-----------|
+                | 101     | John Doe   | Product A |
+                | 102     | Jane Smith | Product B |
+                | 103     | John Doe   | Product C |
+                ```
+                
+                ### 2. **LEFT JOIN (or LEFT OUTER JOIN)**:
+                
+                The LEFT JOIN keyword returns all records from the left table (table1), and the matched records from the right table (table2). The result will contain NULL in the right side when there is no match.
+                
+                **Syntax**:
+                ```sql
+                SELECT columns
+                FROM table1
+                LEFT JOIN table2 ON table1.column = table2.column;
+                ```
+                
+                ### 3. **RIGHT JOIN (or RIGHT OUTER JOIN)**:
+                
+                The RIGHT JOIN keyword returns all records from the right table (table2), and the matched records from the left table (table1). The result will contain NULL in the left side when there is no match.
+                
+                **Syntax**:
+                ```sql
+                SELECT columns
+                FROM table1
+                RIGHT JOIN table2 ON table1.column = table2.column;
+                ```
+                
+                ### 4. **FULL OUTER JOIN**:
+                
+                The FULL OUTER JOIN keyword returns all records when there is a match in either the left (table1) or the right (table2) table.
+                
+                **Syntax**:
+                ```sql
+                SELECT columns
+                FROM table1
+                FULL OUTER JOIN table2 ON table1.column = table2.column;
+                ```
+                
+                ### 5. **Self-Join**:
+                
+                A self-join is a join where a table is joined with itself. It is used to combine rows within the same table based on related columns.
+                
+                **Syntax**:
+                ```sql
+                SELECT t1.column, t2.column
+                FROM table t1
+                INNER JOIN table t2 ON t1.related_column = t2.related_column;
+                ```
+                
+                ### Important Considerations:
+                
+                - Use proper aliases when joining tables with similar column names.
+                - Joins can be chained together for more complex queries.
+                - The choice of join depends on the specific requirements of your query.
+                
+                Joins are fundamental to SQL and are used extensively in database operations to combine and retrieve data from multiple related tables. They allow for powerful querying and reporting capabilities.</p>    
+        </div>
+        <hr>
+        <div id="section5">
+            <h2>5.Aggregate Functions</h2>
+            <p>Aggregate functions in SQL are functions that perform operations on a set of values and return a single result. These functions are used to perform calculations across multiple rows, such as finding the sum, average, minimum, maximum, and count of a set of values. Here are some commonly used aggregate functions in SQL:
+
+                ### 1. **COUNT()**:
+                
+                The COUNT() function is used to count the number of rows that meet a specific condition.
+                
+                **Syntax**:
+                ```sql
+                SELECT COUNT(column_name) FROM table_name WHERE condition;
+                ```
+                
+                ### 2. **SUM()**:
+                
+                The SUM() function calculates the total sum of a numeric column.
+                
+                **Syntax**:
+                ```sql
+                SELECT SUM(column_name) FROM table_name WHERE condition;
+                ```
+                
+                ### 3. **AVG()**:
+                
+                The AVG() function calculates the average value of a numeric column.
+                
+                **Syntax**:
+                ```sql
+                SELECT AVG(column_name) FROM table_name WHERE condition;
+                ```
+                
+                ### 4. **MIN()**:
+                
+                The MIN() function retrieves the minimum value of a column.
+                
+                **Syntax**:
+                ```sql
+                SELECT MIN(column_name) FROM table_name WHERE condition;
+                ```
+                
+                ### 5. **MAX()**:
+                
+                The MAX() function retrieves the maximum value of a column.
+                
+                **Syntax**:
+                ```sql
+                SELECT MAX(column_name) FROM table_name WHERE condition;
+                ```
+                
+                ### 6. **GROUP BY**:
+                
+                The GROUP BY clause is used in combination with aggregate functions to perform calculations for groups of data rather than the entire dataset.
+                
+                **Syntax**:
+                ```sql
+                SELECT column_name, aggregate_function(column_name)
+                FROM table_name
+                GROUP BY column_name;
+                ```
+                
+                ### 7. **HAVING**:
+                
+                The HAVING clause filters groups of data based on a condition after the GROUP BY operation.
+                
+                **Syntax**:
+                ```sql
+                SELECT column_name, aggregate_function(column_name)
+                FROM table_name
+                GROUP BY column_name
+                HAVING condition;
+                ```
+                
+                ### Example:
+                
+                Consider a `Sales` table:
+                
+                ```
+                | ProductID | Category | SalesAmount |
+                |-----------|----------|-------------|
+                | 1         | A        | 100         |
+                | 2         | B        | 200         |
+                | 3         | A        | 150         |
+                | 4         | B        | 120         |
+                | 5         | A        | 180         |
+                ```
+                
+                **Query**:
+                ```sql
+                SELECT Category, COUNT(ProductID) AS TotalProducts, AVG(SalesAmount) AS AvgSales
+                FROM Sales
+                GROUP BY Category
+                HAVING AVG(SalesAmount) > 150;
+                ```
+                
+                **Result**:
+                ```
+                | Category | TotalProducts | AvgSales |
+                |----------|---------------|----------|
+                | A        | 3             | 143.33   |
+                ```
+                
+                In this example, we used the COUNT() and AVG() aggregate functions along with GROUP BY and HAVING clauses to calculate the total products and average sales for each category, filtering out categories with an average sales amount less than or equal to 150.
+                
+                Aggregate functions are essential tools for performing data analysis and summarizing information in SQL queries. They allow you to extract meaningful insights from large datasets.</p>
+        </div> 
+        <hr>                            
+        <div id="section6">
+            <h2>6.Subqueries</h2>
+            <p>Subqueries, also known as inner queries or nested queries, are queries that are embedded within another SQL query. They allow you to perform more complex operations by using the results of one query as a condition or value in another query. Subqueries can be used in SELECT, INSERT, UPDATE, and DELETE statements.
+
+                There are two main types of subqueries: correlated and non-correlated.
+                
+                ### Non-Correlated Subqueries:
+                
+                Non-correlated subqueries are independent of the outer query and can be executed on their own. They return a result set that is used by the outer query.
+                
+                **Syntax**:
+                
+                ```sql
+                SELECT column_name
+                FROM table_name
+                WHERE column_name operator (SELECT column_name FROM table_name WHERE condition);
+                ```
+                
+                **Example**:
+                
+                Consider a `Products` table:
+                
+                ```
+                | ProductID | ProductName | Category  | Price |
+                |-----------|-------------|-----------|-------|
+                | 1         | Laptop      | Electronics| 1000  |
+                | 2         | Smartphone  | Electronics| 800   |
+                | 3         | Shirt       | Apparel   | 30    |
+                | 4         | Shoes       | Apparel   | 50    |
+                ```
+                
+                **Query**:
+                
+                ```sql
+                SELECT ProductName
+                FROM Products
+                WHERE Price > (SELECT AVG(Price) FROM Products);
+                ```
+                
+                **Result**:
+                
+                ```
+                | ProductName |
+                |-------------|
+                | Laptop      |
+                | Smartphone  |
+                ```
+                
+                In this example, the subquery `(SELECT AVG(Price) FROM Products)` calculates the average price of all products. The outer query then selects product names where the price is greater than this average.
+                
+                ### Correlated Subqueries:
+                
+                Correlated subqueries depend on the outer query for their results. They can reference columns from the outer query within the subquery.
+                
+                **Syntax**:
+                
+                ```sql
+                SELECT column_name
+                FROM table_name t1
+                WHERE condition_operator (SELECT column_name FROM table_name t2 WHERE t2.column_name = t1.column_name);
+                ```
+                
+                **Example**:
+                
+                Consider two tables: `Orders` and `Customers`:
+                
+                **Orders Table**:
+                ```
+                | OrderID | CustomerID | TotalAmount |
+                |---------|------------|-------------|
+                | 101     | 1          | 500         |
+                | 102     | 2          | 800         |
+                | 103     | 1          | 300         |
+                ```
+                
+                **Customers Table**:
+                ```
+                | CustomerID | CustomerName |
+                |------------|--------------|
+                | 1          | John Doe      |
+                | 2          | Jane Smith    |
+                ```
+                
+                **Query**:
+                
+                ```sql
+                SELECT CustomerName
+                FROM Customers c
+                WHERE EXISTS (
+                    SELECT 1
+                    FROM Orders o
+                    WHERE o.CustomerID = c.CustomerID
+                    AND o.TotalAmount > 700
+                );
+                ```
+                
+                **Result**:
+                
+                ```
+                | CustomerName |
+                |--------------|
+                | Jane Smith   |
+                ```
+                
+                In this example, the subquery checks if there are any orders with a total amount greater than 700 for each customer. The outer query then selects the customer names for which this condition is true.
+                
+                Subqueries are a powerful feature of SQL that allow for complex and dynamic querying. They can be used in various scenarios to filter, calculate, or retrieve data based on specific conditions.</p>
+        </div>
+        <hr>
+        <div id="section7">
+            <h2>7.Indexes and Performance Optimization</h2>
+            <p>Indexes play a critical role in database performance optimization. They allow for faster retrieval of data by providing a quick lookup mechanism. Here's an overview of indexes and how they can be used for performance optimization in SQL:
+
+                ### What is an Index?
+                
+                An index is a data structure associated with a table that improves the speed of data retrieval operations. It's like an ordered list of pointers to the actual rows in a table.
+                
+                ### Benefits of Indexes:
+                
+                1. **Faster Data Retrieval**: Indexes allow the database to locate specific rows quickly, reducing the time it takes to execute queries.
+                
+                2. **Improved Query Performance**: Queries that involve filtering, sorting, or joining tables can benefit significantly from indexes.
+                
+                3. **Reduced Disk I/O**: Indexes reduce the amount of data the database engine needs to read from disk.
+                
+                ### Types of Indexes:
+                
+                1. **Single-Column Index**:
+                   - An index created on a single column.
+                
+                2. **Composite Index (Multi-Column Index)**:
+                   - An index created on multiple columns. It's useful for queries that involve multiple columns.
+                
+                3. **Unique Index**:
+                   - Ensures that all values in the indexed column(s) are unique.
+                
+                4. **Clustered Index**:
+                   - Determines the physical order of data in a table. There can be only one clustered index per table.
+                
+                5. **Non-Clustered Index**:
+                   - Contains a pointer to the actual data row but does not alter the physical order of the rows.
+                
+                ### Creating Indexes:
+                
+                ```sql
+                -- Syntax for creating an index
+                CREATE INDEX index_name
+                ON table_name (column1, column2, ...);
+                ```
+                
+                ### When to Use Indexes:
+                
+                1. **Columns in WHERE Clause**:
+                   - Index columns used in WHERE conditions to speed up data retrieval.
+                
+                2. **Columns in JOIN Clause**:
+                   - Index columns used in JOIN operations to improve performance.
+                
+                3. **Columns in ORDER BY and GROUP BY**:
+                   - Index columns used in ORDER BY and GROUP BY clauses for faster sorting and grouping.
+                
+                ### Considerations:
+                
+                1. **Overuse of Indexes**:
+                   - While indexes improve read performance, they can slow down write operations (INSERT, UPDATE, DELETE). Don't over-index tables.
+                
+                2. **Cardinality**:
+                   - Consider the uniqueness of the indexed column. Low cardinality columns may not benefit as much from an index.
+                
+                3. **Index Maintenance**:
+                   - Regularly monitor and maintain indexes to ensure they remain effective.
+                
+                4. **Testing and Profiling**:
+                   - Use database profiling tools to analyze query performance and identify areas where indexes can be beneficial.
+                
+                5. **Understanding Query Execution Plans**:
+                   - Familiarize yourself with how the database engine executes queries and how it uses indexes.
+                
+                Indexes are a powerful tool for optimizing database performance, but they need to be used judiciously. It's important to analyze the specific requirements of your database and queries to determine which columns should be indexed for the best performance gains.</p>
+        </div>
+        <hr>
+        <div id="section8">
+            <h2>8.Views and Stored Procedures</h2>
+            <p>Views and stored procedures are important components in database management systems. They provide a way to organize and simplify complex operations and queries.
+
+                ### Views:
+                
+                A view is a virtual table derived from the result of a SELECT query. It does not store data itself but provides a way to present data from one or more tables in a specific format.
+                
+                #### Benefits of Views:
+                
+                1. **Simplifying Complex Queries**:
+                   - Views can hide the complexity of complex queries, making them easier to understand and use.
+                
+                2. **Data Security**:
+                   - Views can restrict access to specific columns or rows of a table, providing an additional layer of security.
+                
+                3. **Data Abstraction**:
+                   - Views can present data in a format that is more meaningful or intuitive for users.
+                
+                4. **Performance Optimization**:
+                   - Predefined views can be optimized for specific types of queries, improving performance.
+                
+                #### Creating a View:
+                
+                ```sql
+                CREATE VIEW view_name AS
+                SELECT column1, column2, ...
+                FROM table_name
+                WHERE condition;
+                ```
+                
+                #### Example:
+                
+                ```sql
+                CREATE VIEW high_priced_products AS
+                SELECT ProductName, Price
+                FROM Products
+                WHERE Price > 1000;
+                ```
+                
+                ### Stored Procedures:
+                
+                A stored procedure is a set of SQL statements that can be saved and executed multiple times. It is stored in the database and can be called by name.
+                
+                #### Benefits of Stored Procedures:
+                
+                1. **Code Reusability**:
+                   - Stored procedures can be reused in different parts of an application or by multiple users.
+                
+                2. **Reduced Network Traffic**:
+                   - Calling a stored procedure involves sending the procedure name and parameters, which can be more efficient than sending multiple SQL statements.
+                
+                3. **Enhanced Security**:
+                   - Access to tables can be restricted, and users can interact with the database only through stored procedures.
+                
+                4. **Transaction Management**:
+                   - Stored procedures can be used to manage transactions, ensuring data integrity.
+                
+                #### Creating a Stored Procedure:
+                
+                ```sql
+                CREATE PROCEDURE procedure_name
+                    @parameter1 datatype,
+                    @parameter2 datatype,
+                    ...
+                AS
+                    SQL statements;
+                ```
+                
+                #### Example:
+                
+                ```sql
+                CREATE PROCEDURE GetOrderDetails
+                    @OrderID int
+                AS
+                BEGIN
+                    SELECT * FROM Orders WHERE OrderID = @OrderID;
+                    SELECT * FROM OrderDetails WHERE OrderID = @OrderID;
+                END;
+                ```
+                
+                ### Calling a Stored Procedure:
+                
+                ```sql
+                EXEC procedure_name parameter1_value, parameter2_value, ...;
+                ```
+                
+                #### Example:
+                
+                ```sql
+                EXEC GetOrderDetails 101;
+                ```
+                
+                Stored procedures are powerful tools for database management and application development. They allow for code reusability, enhanced security, and improved performance. Views, on the other hand, provide a way to present data in a specific format, simplifying complex queries and enhancing data security. Both views and stored procedures are essential components in database-driven applications.</p>
+        </div>
+        <hr>
+        <div id="section9">
+            <h2>9.Data Manipulation Language (DML)</h2>
+            <p>Data Manipulation Language (DML) is a category of SQL commands that are used for managing data within a database. DML commands allow you to insert, update, and delete data from tables. Here are the main DML commands in SQL:
+
+                ### 1. **INSERT**:
+                
+                The `INSERT` statement is used to add new records (rows) to a table.
+                
+                **Syntax**:
+                ```sql
+                INSERT INTO table_name (column1, column2, ...) VALUES (value1, value2, ...);
+                ```
+                
+                **Example**:
+                
+                ```sql
+                INSERT INTO Customers (FirstName, LastName, Email)
+                VALUES ('John', 'Doe', 'john@example.com');
+                ```
+                
+                ### 2. **UPDATE**:
+                
+                The `UPDATE` statement is used to modify existing records in a table.
+                
+                **Syntax**:
+                ```sql
+                UPDATE table_name SET column1 = value1, column2 = value2 WHERE condition;
+                ```
+                
+                **Example**:
+                
+                ```sql
+                UPDATE Customers SET Email = 'johndoe@example.com' WHERE CustomerID = 1;
+                ```
+                
+                ### 3. **DELETE**:
+                
+                The `DELETE` statement is used to remove records from a table.
+                
+                **Syntax**:
+                ```sql
+                DELETE FROM table_name WHERE condition;
+                ```
+                
+                **Example**:
+                
+                ```sql
+                DELETE FROM Customers WHERE CustomerID = 2;
+                ```
+                
+                ### 4. **MERGE**:
+                
+                The `MERGE` statement allows you to perform multiple DML operations (INSERT, UPDATE, DELETE) within a single statement based on a condition.
+                
+                **Syntax**:
+                ```sql
+                MERGE INTO target_table USING source_table ON condition
+                WHEN MATCHED THEN
+                    UPDATE SET column1 = value1, column2 = value2
+                WHEN NOT MATCHED THEN
+                    INSERT (column1, column2, ...) VALUES (value1, value2, ...);
+                ```
+                
+                **Example**:
+                
+                ```sql
+                MERGE INTO Customers AS target
+                USING NewCustomers AS source
+                ON target.CustomerID = source.CustomerID
+                WHEN MATCHED THEN
+                    UPDATE SET target.Email = source.NewEmail
+                WHEN NOT MATCHED THEN
+                    INSERT (FirstName, LastName, Email)
+                    VALUES (source.FirstName, source.LastName, source.NewEmail);
+                ```
+                
+                ### 5. **TRUNCATE TABLE**:
+                
+                The `TRUNCATE TABLE` statement is used to remove all records from a table, effectively resetting it.
+                
+                **Syntax**:
+                ```sql
+                TRUNCATE TABLE table_name;
+                ```
+                
+                **Example**:
+                
+                ```sql
+                TRUNCATE TABLE Products;
+                ```
+                
+                ### 6. **COMMIT and ROLLBACK**:
+                
+                These are not DML statements themselves, but they are crucial for managing transactions, which involve multiple DML operations.
+                
+                - `COMMIT`: Saves all the changes made during the current transaction.
+                - `ROLLBACK`: Undoes all the changes made during the current transaction.
+                
+                **Example**:
+                
+                ```sql
+                BEGIN TRANSACTION;
+                -- DML statements
+                COMMIT;
+                -- or
+                ROLLBACK;
+                ```
+                
+                DML commands are essential for managing and manipulating data in a database. They allow you to add, update, and delete records, ensuring that the data remains accurate and up-to-date. When used in conjunction with transactions, DML commands help maintain data integrity.</p>
+        </div>
+
+
+    </div>
+
+    <script>
+        // JavaScript to handle table of contents links
+        const tocItems = document.querySelectorAll("#table-of-contents ul li a");
+
+        tocItems.forEach((item) => {
+            item.addEventListener("click", (event) => {
+                event.preventDefault();
+                const sectionId = event.target.getAttribute("href").substring(1);
+                const section = document.getElementById(sectionId);
+
+                // Scroll to the selected section
+                section.scrollIntoView({ behavior: "smooth" });
+            });
+        });
+    </script>
+</body>
+</html>
